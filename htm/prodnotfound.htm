@@ -1,0 +1,56 @@
+<div class="FProdNotErrOr-container">
+  <div class="FProdNotErrOr">  
+    <div class="zFProdNotFoundHeader">
+      <div class="zFProdNotFoundHeader-img"><img src='<PathTo file="images/ico404lupa.svg">'></div>
+      <div class="zFProdNotFoundHeader-title"><h2 class="zFNotFoundTxt">Nenhum produto encontrado na busca</h2></div>
+    </div>
+    <div class="zFProdNotFoundPromo">
+      <ul>
+        <h2>Dicas para sua busca:</h2>
+        <li>- Verifique se há erros de digitação.</li>
+        <li>- Tente utilizar uma única palavra.</li>
+        <li>- Procure utilizar sinônimos ao termo desejado.</li>
+      </ul>
+    	  <p class="zFNotFoundContinue"><a href="<url-advanced-search>?produtos=20&order=1" target="_top">Clique aqui</a> para fazer nova busca.</p>
+    	  <a href="<url-sale>" class="zFPromoNotFound" target="_top">Promoções</a>
+    </div> 
+  </div>
+</div>
+
+<style>
+.zFPromoNotFound{background:#2196F3;}
+.zFPromoNotFound:hover{box-shadow:1px 0px 7px #888888;transition:0.3s}
+.zFPromoNotFound:active{color:#fff;}
+.zFNotFoundTxt{display:flex;margin:30px auto 0;font-size:1.5em;}
+.zFNotFoundTxt img{display:block;margin-right:10px;}
+.zFPromoNotFound:visited{color:#fff;}
+.zFPromoNotFound{transition:0.3s;width:200px;display:block;background:<tag-FCCSSMainColor>;color:#fff;font-size:1.35em;text-decoration:none;border-radius:5px;text-align:center;padding:10px 0;margin:50px auto 0px;text-transform:uppercase;}
+.zFProdNotFoundPromo li{line-height:normal;list-style:none;margin:20px 0;}
+.zFNotFoundSTxt{display:block;margin:10px auto;color:#969696;font-size:22px;text-align:center;font-weight:bold;}
+.zFProdNotFoundPromo h2{margin:5px auto 20px;}
+p.zFNotFoundContinue a{color:#222222;font-weight:bold;}
+p.zFNotFoundContinue{font-size:0.9rem;margin:30px auto;}
+.FProdNotErrOr-container{width:100%;}
+.FProdNotErrOr{width:50%;text-align:center;margin:0 auto;}
+.zFProdNotFoundHeader{display:flex;justify-content:space-evenly}
+.zFProdNotFoundHeader h2{position:relative;top:-10px;left:5px;font-size:1.25rem;}
+.zFProdNotFoundPromo{text-align:left;margin:30px;}
+@media only screen and (max-width:640px){.FProdNotErrOr{width:100%;}}
+@media only screen and (min-width:1025px) and (max-width:1366px) {.FProdNotErrOr{width:70%;}}
+@media only screen and (min-width:641px) and (max-width:1024px) {
+.FProdNotErrOr{width:100%;}
+.zFProdNotFoundHeader{display:flex;flex-direction:column;align-items:center;}
+.zFProdNotFoundHeader h2{font-size:1rem;}
+.zFProdNotFoundPromo{text-align:left;margin:30px 5px 30px 15px;}
+.zFProdNotFoundHeader h2{left:0px;}
+.zFProdNotFoundPromo li{font-size:0.95rem}
+}
+@media only screen and (max-width:640px){
+.FProdNotErrOr{width:100%;}
+.zFProdNotFoundHeader{display:flex;flex-direction:column;align-items:center;}
+.zFProdNotFoundHeader h2{font-size:0.95rem;}
+.zFProdNotFoundPromo{text-align:left;margin:30px 5px 30px 15px;}
+.zFProdNotFoundHeader h2{left:0px;}
+.zFProdNotFoundPromo li{font-size:0.95rem}
+}
+</style>
