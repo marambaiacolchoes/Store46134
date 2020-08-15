@@ -1,0 +1,33 @@
+<link rel=stylesheet href="/css/swiper/v4.2.6/swiper.min.css?cccfc=1">
+<script src="/js/swiper/v4.2.6/swiper.min.js?cccfc=1"></script>
+<div id="FC-HideHomeBanners" style="display:none;">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <script>
+      function fnSlideshowStore() {
+        var numBannerHomeFC = sF$.fnGetConfig("Qty_Banner_Slideshow");
+        var bannerImageFC = ["<banner-image 11>", "<banner-image 12>", "<banner-image 13>", "<banner-image 14>"];
+        var bannerimageMobileFC = ["<banner-image-mobile 11>", "<banner-image-mobile 12>", "<banner-image-mobile 13>", "<banner-image-mobile 14>"];
+        var bannerRedirFC = ["<banner-redir 11>", "<banner-redir 12>", "<banner-redir 13>", "<banner-redir 14>"];
+        var bannerAltFC = ["<banner-alt 11>", "<banner-alt 12>", "<banner-alt 13>", "<banner-alt 14>"];
+        for (i = 0; i < bannerImageFC.length-(4-numBannerHomeFC); i++) {
+          document.write ('<div class="swiper-slide"><a href="'+ bannerRedirFC[i] +'"><picture><source media="(max-width:1024px)" srcset="'+ bannerimageMobileFC[i] +'"><img alt="'+ bannerAltFC[i] +'" src="'+ bannerImageFC[i] +'"></picture></a></div>');                                                                                                              
+        }
+      }
+      fnSlideshowStore();
+      FCLib$.execLazyLoad();
+      </script>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+<script>
+sF$.fnHideShowBannersHome();
+sF$.fnSlideshowSwiper();
+</script>
+<style>
+.header-space-top{padding-top:65px!important;}
+.swiper-container{margin-bottom: -41px!important;}
+</style>
