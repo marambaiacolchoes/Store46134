@@ -1,0 +1,20 @@
+<p255>
+<div class="DivHomeProd" onclick="NoCascate('<URLProd>');" <DataAttribute> id="DivProd<IDProduto>">
+  <div class="DivHomeImagemProd" id="DivImagemProdDouble<IDProduto>"></div>
+  <div class="DivHome-fastview font-bold" onclick='bCascate=true;FCLib$.OpenRWD("<url-prod-id><IDProduto>&sty=9&int=1","Disp","width=700,height=700")'>
+<a href="<URLProd>" rel="nofollow" onclick="insertURLPreview();">ESPIAR</a></div>
+  <div class="DivHomeNomeProd">
+    <span class="HomeNomeProd font-regular"><NomeProd></span>
+  </div>
+  <div class="DivHomePriceProd" style="white-space:nowrap;">
+    <div id="idProdPrice<IDProduto>"></div> 
+    <div class="PriceAVistaLista" id="ProdDesc<IDProduto>"></div>
+  </div>
+</div>
+<script>
+FCLib$.onReady(function(){
+  sF$.fnChangeImages("<ImagemProdPri>","<ImagemProdDet>","<URLProd>","<IDProduto>","<NomeProdUA>");
+  sF$.fnShowProd(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>)
+});
+</script>
+</p255>
