@@ -1,0 +1,51 @@
+/* Fastcommerce - Buy Together  Mar/2016 (v1) */
+#bTContainer hr{border-top:1px solid #cccccc !important;display:block;width:100% !important;height:1px !important;clear:both;}
+#bTContainer{width:100%;float:left;min-height:1px;margin:0 0;border-top:1px solid #cccccc;margin-top:10px;}
+#bTEconomyItemConj{display:none;}
+.bTItem{min-height:280px;float:left;margin:15px 5px;padding:10px;text-align:center;position:relative; }
+.bTItem:after{content:" ";background:url("/images/plus.svg?cccfc=1") no-repeat;background-size:100%;width:18px;height:18px;position:absolute;}
+.bTItensContainer > div:last-of-type:after{background:none;content:"";}
+.bTTotalBuy{float:left;}
+.bTTotalsPrices{position:relative;padding:10px;}
+.bTTotalBuy:before{content:" ";background:url("/images/equal.svg"?cccfc=1) no-repeat;background-size:100%;width:18px;height:18px;position:absolute;left:-20px;top:85px;}
+.bTProdSelectName{width:100%;clear:both;padding:5px 0;position:relative;top:-60px;}
+.bTProdSelectName label{font-size:13px;}
+.bTText{float:left;width:100%;clear:both;font-weight:bold;display:block;margin:20px 0 5px 0;}
+.bTAddProd{position:absolute;left:4px;top:4px;z-index:99;font-size:0.8em;}
+.EqualSeparator{float:left;font-weight:bold;display:block;width:18px;margin:75px 0 0 0;}
+.EqualSeparator svg{width:100%;}
+.bTImgProd{width:100%;padding:15px 5px 5px 5px;margin-bottom:25px;}
+.bTImgProd img{max-width:100%;max-height:100px;}
+#bTDescrProdConj li{list-style:none;margin:2px 0;}
+.bTProdName{min-height:40px;font-size:13px;font-weight:bold;}
+.bTIntProd{min-height:60px !important;}
+.bTPriceProd{text-align:center;height:90px !important;}
+.FCfnShowEconomyConj{color:#0E72D2;text-align:center;font-size:13px;font-weight:bold;display:block;margin:10px 0;padding:7px 3px;}
+.bTPriceProd .FCPriceInt{font-size:19px;}
+.bTPriceProd .FCCurrencyLabel{}
+#PricesCJ h3{color:#656565;font-size:20px;margin:0 0 20px 0;font-weight:400;}
+.bTProdPrice{margin:10px 0 10px 0;}
+.bTPricePorCont{display:block;margin:10px 0;}
+.bTPricePor,.bTOriPrice{font-weight:bold;font-size:25px;color:#6f9e45;/*display: block;*/}
+.bTEconomy{display:block;color:#656565;}
+.bTPriceOff{font-size:14px;}
+#BotComprarCJ{margin:15px 0 0 0;}
+#BotComprarCJ a img{max-width:100%;}
+@media only screen and (max-width:640px){
+  .bTItem{width:100%;clear:both;min-height:260px;}
+  .bTTotalsPrices{min-height:280px;float:none;margin:0 auto;display:table !important;}
+  .bTItem:after{right:50%;bottom:-15px;}
+}
+@media only screen and (min-width:641px) and (max-width:1023px){
+  .bTItem{width:31%;min-height:260px;}
+  .bTTotalsPrices{width:31%;min-height:280px;float:left;margin:15px 5px;}
+  .EqualSeparator{float:left;}
+  .bTItem:after{right:0;top:85px;}
+}
+@media only screen and (min-width:1024px){
+  .bTItem{width:15%;min-height:0px;}
+  .bTTotalsPrices{width:16%;min-height:280px;float:left;margin:15px 5px;}
+  .bTTotalBuy{float:left;width:100%;}
+  .EqualSeparator{float:left;display:block;}
+  .bTItem:after{right:0;top:85px;}
+}
