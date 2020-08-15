@@ -1,0 +1,268 @@
+<head>
+<title>Lista de Compra</title>
+<meta name="description" content="Lista de Compra Loja Virtual. Selecione o produto e compre!">
+<meta name="keywords" content="Lista de compra,lojavirtual,ecommerce">
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+#productListArea{color:#284283;font-family:'Caveat',cursive;font-size:24px;width:320px;height:410px;padding:20px 30px 20px 40px;border:0;outline:none;resize:none;background-color:transparent;}
+#btProductSplit{cursor:pointer}
+#lista-de-compra{padding:20px;display:flex;margin:0 auto;width:750px;}
+.result{display:flex;align-items:center;}
+.result button{display:flex;justify-content:flex-end;margin:10px;cursor:pointer;}
+.result span{display:block;width:170px;white-space:nowrap;overflow:hidden;margin-right:20px;}
+.result img{width:17px;height:17px;margin-left:5px;cursor:pointer;}
+.result a{display:flex;align-items:center;text-decoration:underline;}
+.result a:hover{text-decoration:underline;color:black}
+.result svg,.tipInst svg{fill:#284283;width:17px;height:17px;opacity:0.8;}
+.result svg:hover{opacity:1;}
+.tipInst svg{margin-right:5px;}
+#lista-de-compra .Titulos{color:#284283;font-family:'Caveat',cursive;font-size:35px;display:block;text-align:center;}
+#productListBase{width:320px;height:418px;background-image:url('<PathTo file="images/notepad.png">');background-size:320px 418px;background-repeat:no-repeat;}
+#resultBase{width:320px;height:410px;color:#284283;font-family:'Caveat',cursive;font-size:24px;padding:20px 30px 20px 40px;line-height:32px;overflow:auto;display:none;}
+#btChangeList{display:none;}
+.checkedItem{text-decoration:line-through;text-decoration-color:#999}
+.List-Controls {width: 540px; margin:0 auto 10px;display: flex; display: -ms-flexbox; display: -webkit-flex; justify-content: center; -ms-justify-content:center; -webkit-justify-content:center;}
+.List-Controls button {display: flex;align-items: center;flex-direction:column;padding-bottom: 5px; opacity: 1; outline-color:#01579B;border:0px; border-radius: 3px; cursor: pointer; background:#01579B; font-size: 11px; text-transform: uppercase; font-weight: bold; margin-right: 5px; min-height: 40px; color: #fff; transition: 0.3s; width: 50%;}
+.List-Controls button:hover {opacity: 0.8; border: 0; box-shadow: 0 4px 10px #a2a2a2; transition: 0.3s;}
+.List-Controls svg {width: 23px; height: 23px; min-width: 23px;min-height: 23px; }
+.List-Controls button:disabled  {background:transparent; color: #c0c0c0; box-shadow: none; border: 1px solid;}
+.List-Controls button:disabled svg {fill:#808080;}
+.List-Controls button svg {fill:#ffffff;display: flex;justify-content: center;width: 100%;}
+.List-Controls button img {width:100%; height: 17px; margin-right: 5px; display: block;margin: 3px auto 3px; }
+.tipList {margin-left:20px;}
+.tipList ul {max-width:400px;margin:0;margin:90px auto 0;}
+.tipList ul li {list-style:none;margin-bottom:15px;}
+.strColor {font-weight:bold;color:orange;}
+.FctipTopic {display:flex;align-items:center;color:#284283;font-size:12px;font-weight:bold;}
+.bulletTopic {border:2px solid #284283;border-radius: 50%;margin-right: 5px;width: 30px;height: 30px;display: flex;align-items: center;justify-content:center;}
+.FctipTitle {margin-bottom:15px;}
+.FctipTopic p{font-weight:bold;}
+.tipTxt {color:#757575;font-size:13px;padding-left:35px;line-height:1.4;}
+ul.tipInst {margin:0;}
+ul.tipInst li {display:flex;align-items:center;margin-bottom:0px;margin-top:7px;margin-left:3px;font-size:12px;color:#757575;padding-left:35px;}
+li.tipInstHead{padding:0 0 10px;}
+ul.tipInst li:last-child {margin-bottom:20px;}
+.vex.vex-theme-default .vex-content {min-width:700px; white-space: nowrap;}
+@media(max-width:767px){#lista-de-compra,.List-Controls {display:none}}
+</style>
+  <div id=lista-de-compra>
+    <div class=List-Interface>
+      <span class=Titulos>Minha lista de compra</span><br>
+      <div id=productListBase>
+        <textarea id=productListArea placeholder="Insira um produto por linha." onkeyup="productList$.verifyProductSplit()" autofocus></textarea>
+        <div id=resultBase></div>
+      </div>
+    </div>
+    <div class=tipList>
+      <ul>
+        <p class=FctipTitle>Instruções rápidas:</p>
+        <li>
+          <div class=FctipTopic>
+            <span class=bulletTopic>1</span>
+            <p>Digite um produto por linha</p>
+          </div>
+          <p class=tipTxt>Tecle <span class=strColor>ENTER</span> após digitar cada produto. Se preferir, cole uma lista de produtos com um produto por linha.</p>
+        </li>
+        <li>
+          <div class=FctipTopic>
+            <span class=bulletTopic>2</span>
+            <p>Encontre os produtos</p>
+          </div>
+          <p class=tipTxt>Após digitar todos os produtos da lista, clique no botão <span class=strColor>BUSCAR PRODUTOS</span>.</p>
+        </li>
+        <li>
+          <div class=FctipTopic>
+            <span class=bulletTopic>3</span>
+            <p>Verifique os resultados</p>
+          </div>
+          <ul class=tipInst>
+            <p class="tipInstHead tipTxt">Ao lado de cada produto, você terá as opções:</p>
+            <li><img64 src="/icons/GoogleV1/svg/ic_search_24px.svg" plain="true">Buscar produto</li>
+            <li><img64 src="/icons/GoogleV1/svg/ic_check_24px.svg" plain="true">Marcar como comprado</li>
+            <li><img64 src="/icons/GoogleV1/svg/ic_delete_24px.svg" plain="true">Apagar da lista</li>
+          </ul>
+        </li>
+        <li>
+          <div class=FctipTopic>
+            <span class=bulletTopic>4</span>
+            <p>Adicione ao carrinho</p>
+          </div>
+          <p class=tipTxt>Clique em cada item da lista e selecione o produto desejado. Depois é só clicar em <span class=strColor>COMPRAR</span>.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class=List-Controls>
+    <button id=btProductSplit onclick="productList$.productSplit()" disabled><img64 src="/icons/GoogleV1/svg/ic_search_24px.svg" plain="true" alt="Buscar">Buscar produtos</button>
+    <button id=btChangeList onclick="productList$.changeList()"><img src="<PathTo file="images/edit-text.svg">" width=20px height=20px alt="Alterar">Alterar lista</button>
+    <button id=btNewList onclick="productList$.newList()" disabled><img64 src="/icons/GoogleV1/svg/ic_playlist_add_24px.svg" plain="true" alt="Nova lista">Recomeçar</button>
+  </div>
+
+
+
+<script>
+var productList$=(function(){
+  "use strict";
+  var sIconSearch="<svg viewBox='0 0 24 24'><path d='M15.5 14h-.79l-.28-.27c.98-1.14 1.57-2.62 1.57-4.23 0-3.59-2.91-6.5-6.5-6.5s-6.5 2.91-6.5 6.5 2.91 6.5 6.5 6.5c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99 1.49-1.49-4.99-5zm-6 0c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5 4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5z'/><path d='M0 0h24v24h-24z' fill='none'/></svg>";
+  var sIconCheck="<svg viewBox='0 0 24 24'><path d='M0 0h24v24h-24z' fill='none'/><path d='M9 16.17l-4.17-4.17-1.42 1.41 5.59 5.59 12-12-1.41-1.41z'/></svg>";
+  var sIconDelete="<svg viewBox='0 0 24 24'><path d='M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-12h-12v12zm13-15h-3.5l-1-1h-5l-1 1h-3.5v2h14v-2z'/><path d='M0 0h24v24h-24z' fill='none'/></svg>";
+  var sLocalStorageItem="myShoppingList";
+  var sLocalStorageEdit="myShoppingEdit";
+  var sLocalStorageRiscados="myShoppingRiscados";
+  var oProductListArea=FCLib$.GetID("productListArea");
+  var oBtProductSplit=FCLib$.GetID("btProductSplit");
+  var oBtNewList=FCLib$.GetID("btNewList");
+  var oBtChangeList=FCLib$.GetID("btChangeList");
+  var oProductListBase=FCLib$.GetID("productListBase");
+  var oResultBase=FCLib$.GetID("resultBase");
+  var aLista=[];
+  var oListaRiscados={};
+  var bEditMode=!(localStorage.getItem(sLocalStorageEdit)==="false");
+  var sSavedListRiscados=localStorage.getItem(sLocalStorageRiscados);
+  if(sSavedListRiscados && sSavedListRiscados.length>2)oListaRiscados=JSON.parse(sSavedListRiscados);
+  var sSavedList=localStorage.getItem(sLocalStorageItem);
+  if(sSavedList && sSavedList.length>2){
+    oProductListArea.value=sSavedList;
+    verifyProductSplit();
+    if(!bEditMode)productSplit();
+  }
+
+  function verifyProductSplit(){
+    oBtProductSplit.disabled=(oProductListArea.value.replace(/\r|\r\n|\n| /g,"").length<3)?true:false;
+    oBtNewList.disabled=oBtProductSplit.disabled;
+    getLista();
+    saveList();
+  }
+
+  function getLista(){
+    var sLista=oProductListArea.value;
+    var aItems=sLista.split(/\r|\r\n|\n/);
+    var iItems=aItems.length;
+    var sItem;
+    var sItemLower;
+    var iITemsOK=0;
+    var oLista={};
+    aLista=[];
+    for(var i=0;i<iItems;i++){
+      if(aItems[i].replace(/[^a-z0-9áéíóúàãõüâêôç]/gi,"").length>2){
+        sItem=aItems[i].trim().replace(/[^a-z0-9 áéíóúàãõüâêôç_-]/gi," ").replace(/\s\s+/g,' ');
+        sItemLower=sItem.toLowerCase();
+        if(oLista[sItemLower]==undefined){
+          oLista[sItemLower]=iITemsOK;
+          aLista[iITemsOK]=sItem;
+          iITemsOK++;
+        }
+      }
+    }
+  }
+
+  function productSplit(){
+    getLista();
+    var iLista=aLista.length;
+    if(iLista>0){
+      var sBuf="",sItem,sClassRiscado;
+      for(var i=0;i<iLista;i++){
+        sItem=aLista[i];
+        sClassRiscado=(oListaRiscados[sItem])?" class=checkedItem":"";
+        sBuf+="<div id=resultLine"+ i +" class=result><a onclick=bCascate=true;FCLib$.OpenRWD('<url-prod>?sty=8&int=1&<par-typed>=1&<par-text>="+ escape(sItem) +"','Disp','width=700,height=700') href=#Spy rel='nofollow' title=\"Resultado: "+ sItem +"\">";
+        sBuf+="<span id=itemName"+ i + sClassRiscado +">"+ sItem +"</span>";
+        sBuf+=sIconSearch +"</a>";
+        sBuf+="<a href=#na title=Verificado onclick=productList$.checkItem("+ i +")>"+ sIconCheck +"</a>";
+        sBuf+="<a href=#na title=Deletar onclick=productList$.deleteItem("+ i +")>"+ sIconDelete +"</a>";
+        sBuf+="</div>";
+      }
+      oBtProductSplit.disabled=true;
+      oProductListArea.style.display='none';
+      oResultBase.style.display='block';
+      oBtChangeList.style.display='inline-flex';
+      oResultBase.innerHTML=sBuf;
+    }
+    bEditMode=(iLista==0);
+    changeEditMode(bEditMode);
+  }
+
+  function newList(){
+    oBtChangeList.style.display='none';
+    oBtProductSplit.disabled=true;
+    oBtNewList.disabled=true;
+    oProductListArea.value='';
+    oResultBase.style.display='none';
+    oProductListArea.style.display='block';
+    oProductListArea.focus();
+    localStorage.removeItem(sLocalStorageItem);
+    localStorage.removeItem(sLocalStorageRiscados);
+    oListaRiscados={};
+    changeEditMode(true);
+  }
+
+  function changeList(){
+    oBtChangeList.style.display='none';
+    oBtProductSplit.disabled=false;
+    oProductListArea.value=getFullList();
+    oResultBase.style.display='none';
+    oProductListArea.style.display='block';
+    oProductListArea.focus();
+    changeEditMode(true);
+  }
+
+  function getFullList(){return aLista.join("\r\n").replace(/^\s*[\r\n]/gm,"");}
+  function getFullListRiscados(){return JSON.stringify(oListaRiscados);}
+
+  function checkItem(iItem){
+    var oItemName=FCLib$.GetID("itemName"+ iItem);
+    var sItemName=oItemName.innerHTML;
+    if(oItemName.className=="checkedItem"){
+      oItemName.className="";
+      delete oListaRiscados[sItemName];
+    }
+    else{
+      oItemName.className="checkedItem";
+      oListaRiscados[sItemName]=true;
+    }
+    saveListRiscados();
+  }
+
+  function saveList(){localStorage.setItem(sLocalStorageItem,getFullList());}
+
+  function saveListRiscados(){
+    localStorage.setItem(sLocalStorageRiscados,getFullListRiscados());
+  }
+
+  function deleteItem(iItem){
+    aLista[iItem]="";
+    if(isListaVazia())newList();
+    else{
+      var oResultLine=FCLib$.GetID("resultLine"+ iItem);
+      oResultLine.style.display='none';
+    }
+    var oItemName=FCLib$.GetID("itemName"+ iItem);
+    var sItemName=oItemName.innerHTML;
+    saveList();
+    if(oListaRiscados[sItemName]){
+      delete oListaRiscados[sItemName];
+      saveListRiscados();
+    }
+  }
+
+  function changeEditMode(isEdit){
+    localStorage.setItem(sLocalStorageEdit,isEdit);
+  }
+
+  function isListaVazia(){
+    return (aLista.join("")=="")?true:false;
+  }
+
+  return{
+    sIconSearch:sIconSearch,
+    sIconCheck:sIconCheck,
+    sIconDelete:sIconDelete,
+    verifyProductSplit:verifyProductSplit,
+    productSplit:productSplit,
+    newList:newList,
+    changeList:changeList,
+    checkItem:checkItem,
+    deleteItem:deleteItem
+  }
+})();
+</script>
