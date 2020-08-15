@@ -1,0 +1,25 @@
+/* Global */
+.Testecolor{<tag-FCCSS-COlorTest1>}
+
+/* Estilos personalizados */
+.EstPassoCompraDiv{display:none}
+.EstContinuarComprando{display:none;}
+#TabBancos{display:none;}
+.PedLinkRodape{color:#004a8a;text-decoration:underline;}
+.SecurityLogos img{margin:20px 5px;float:left;}
+.SecurityLogos svg{margin:15px 5px;float:left;}
+.SecurityLogos{margin:0 auto;display:table;font-weight:bold;}
+.SecurityLogos b{font-weight:bold;margin:0 0 0 -80px;}
+.header-ped-line{width:100%;height:8px;background:#f9f9f9;margin-bottom:50px;}
+
+/* Footer */
+.FooterPedPositionFC{bottom:0;width:100%;}
+.FCCheckout .pwdEye{position:relative;top:6px;}
+#idTableSenhaFC .pwdEye{position:relative;top:11px;display:block;}
+
+/*Media Queries*/
+@media only screen and (max-width:640px) { 
+  .HeaderPhonePositionMenuFC{position:relative;top:0;}
+  .header-ped-line{margin-bottom:10px;}
+  #idTableSenhaFC .pwdEye{display:none;}
+}
