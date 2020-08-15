@@ -1,0 +1,32 @@
+/* Configurações gerais da loja */
+
+var oStoreConfig$={
+  "Product_Badges_Home_ProductList":[true,"Mostra badges na home e lista de produtos."],
+  "History_Page":[true,"Mostra histórico de páginas visitadas."],
+  "Product_SoldOut_Badge_ProductList":[true,"Mostra badge de produto esgotado na lista de produtos."],
+  "Product_SoldOut_Badge_SubProduct_ProductList":[true,"Mostra badge de subproduto esgotado na lista de produtos."],
+  "Change_Image_Hover_Home_ProductList":[true,"Ao passar o mouse, altera imagem do produto na home e lista de produtos."],
+  "Header_Voice_Search":[true,"Mostra busca por voz no campo de busca do topo."],
+  "News_Voice_Search":[true,"Mostra busca por voz na página de notícias."],
+  "Popup_Dont_Go":[false,"Mostra popup antes do visitante sair da página."],
+  "Product_List_Grid_Show":[true,"Mostra grade como produto na lista de produtos."],
+  "Product_List_Grid_Use_Main_Price":[false,"Mostra na grade da lista de produtos o preço do produto pai se subprodutos não tiverem preço."],
+  "Product_List_Grid_Soldout_Show":[true,"Mostra produtos esgotados na grade da lista de produtos."],
+  "Product_List_Grid_Single_Option":[false,"Mostra grade como produto na lista de produtos mesmo em produtos com única opção."],
+  "Product_List_Grid_FromPrice_Label_Show":[true,"Mostra legenda <b><i>A partir de</i></b> quando exibir na lista de produtos o menor preço da grade."],
+  "Product_List_Grid_Main_Descriptor_Label":["","Label do principal descritor de grade, que será adicionado ao nome do produto. ex: tam"],
+  "Product_List_Grid_Main_Descriptor_Field":["color","Nome do primeiro campo descritor de grade. Opções: color, desc1, desc2, desc3, descD1, descD2, descD3"],
+  "Product_Details_Show_Stock":[false,"Mostra estoque na página de detalhes dos produtos."],
+  "Product_Details_Show_Date_Promotion":[false,"Mostra data de término de promoção na página de detalhes dos produtos."],
+  "Home_Slideshow":[true,"Mostra banners rotativos na home."],
+  "Footer_Cookie_Policy":[false,"Mostra alerta política de cookies."],
+  "Next_page_button":[1,"Exibe botão para autopaginação. Informe 0 para desabilitar ou digite a quantidade de páginas de produtos a partir da qual será exibido botão para ver mais produtos."],
+  "Show_wishlist":[false,"Exibe lista de desejos."],
+  "Recommend_Product":[true,"Mostra link na página de detalhes para recomendar o produto"],
+  "Grid_Pinch_Zoom":[true,"Efeito de pinça no zoom da grade"],
+  "Cart_ZipCode_Price_Side_Cart":[true,"Desabilitar valor zero do frete no carrinho lateral"],
+  "Cart_ZipCode_Price_Shopping_Cart":[true,"Desabilitar valor zero do frete no carrinho de compras"],
+  "Time_Slideshow":[5000,"Tempo de transição entre banners."],
+  "Qty_Banner_Slideshow":[2,"Mostra a quantidade de banners cadastrado no slideshow."],
+  "Show_Header_Menu":[false,"Mostra menu no topo"]
+};
