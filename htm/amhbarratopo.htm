@@ -1,0 +1,39 @@
+<amp-sidebar id='sidebar' layout="nodisplay" side="left">
+  <amp-img class='amp-close-image' src="<PathTo file="images/ampclose.svg">" width="35" height="35" alt="close sidebar" on="tap:sidebar.close" role="button" tabindex="0"></amp-img>
+  <nav class="amp-nav">
+    <a href="<PathAMP url="/">"><img64 src="<BaseLoja>images/amp-home.svg" plain="true" width="24" height="24" title="Home"> Home</a>
+    <a href="<PathAMP url="<url-release>">"><img64 src="<BaseLoja>images/amp-new-releases.svg" plain="true" width="24" height="24" title="Lançamentos"> Lançamentos</a>
+    <a href="<PathAMP url="<url-sale>">"><img64 src="<BaseLoja>images/amp-offers.svg" plain="true" width="24" height="24" title="Promoções">Promoções</a>
+    <a href="<url-advanced-search>"><img64 src="<BaseLoja>images/amp-search.svg" plain="true" width="25" height="25" title="Buscar"> Busca detalhada</a>
+  </nav>
+  <div class="amp-cats">
+    <a href="<PathAMP url="<url-categories>">" class="amp-link-cats"><Categorias></a>
+    <ListPathCat out="13" id="-1">
+  </div>
+</amp-sidebar>
+
+<header>
+  <div class="container">
+    <div class="amp-header-menu">
+      <button on='tap:sidebar.toggle' class="amp-sidebar-btn" aria-label="Abrir Menu">
+        <amp-img layout="fill" src="<PathTo file="images/amp-icon-menu-open.svg">" alt="Abrir Menu"></amp-img>
+      </button>
+    </div>
+    <div class="amp-header-logo">
+      <a href="<PathAMP url="/">"><amp-img layout="fill" src="<PathTo file="images/amplogotopo.png">" class="amp-header-logo-img" alt="<NomeLoja>"></amp-img></a>
+    </div>
+    <div class="amp-header-cart">
+      <a href="<url-add-product>"><amp-img layout="fill" src="<PathTo file="images/ampiconcart.svg">" alt="Carrinho"></amp-img></a>
+    </div>
+    <div class="amp-search-container">
+      <form name="TopSearchForm" method="GET" target="_top" action="<url-prod>" accept-charset="UTF-8">
+        <input type="hidden" name="<par-typed>" value="true">
+        <input type="hidden" name="useamp" value="true">
+        <input type="text" value="<SearchText>" name="<par-text>" class="amp-search-input" placeholder="Digite sua busca aqui" aria-label="Digite sua busca aqui">
+        <button type="submit" class="amp-search-btn" aria-label="Buscar"><img64 src="<BaseLoja>images/amp-search.svg" plain="true" width="25" height="25" title="Buscar"></button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<section class="container amp-main">
