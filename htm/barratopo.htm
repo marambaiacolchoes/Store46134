@@ -1,0 +1,88 @@
+<!--[if IE]><style type="text/css">.ui-autocomplete-category{margin-top: -2px}</style><![endif]-->
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<script>
+var iItensCesta=<QtdCesta>;
+var iQtdProds=0;
+ImgLoadingFC=FC$.PathImg+"loading.gif?cccfc=1";
+ImgOnError=FC$.PathImg+"nd";
+FCLib$.LazyLoadWaitImage=FC$.PathImg+"loading-lazy-load.gif?cccfc=1"; //loading usado no lazy load
+</script>
+
+<div id="offcanvas-overlay" onclick="headerCloseNav();"></div>
+<div id="headerSidenav" class="header-sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="headerCloseNav()"><img alt="Fechar" title="Fechar" src="<PathTo file="images/icon-menu-close.svg">" loading="lazy" width="35" height="35"></a>
+  <a href="/" class="header-sidenav-link"><span class="header-sidenav-link-position">Home</span></a>
+  <a href="<url-sale>" class="header-sidenav-link"><span class="header-sidenav-link-position">Promoções</span></a>
+  <a href="<url-release>" class="header-sidenav-link"><span class="header-sidenav-link-position">Lançamentos</span></a>
+  <a href="<url-account>?orders=1#Orders" class="header-sidenav-link"><span class="header-sidenav-link-position">Meus Pedidos</span></a>
+  <a href="/lista-de-compra" rel="nofollow" class="header-sidenav-link header-sidenav-link-shopping-list"><span class="header-sidenav-link-position header-menu-shopping-list"><img64 src="<BaseLoja>images/product-list.svg" width="22" height="22" plain="true"><span>Lista de Compra</span></span></a>
+  <a href="<url-account>?wishlist=1#Wishlist" rel="nofollow" class="header-sidenav-link"><span class="header-sidenav-link-position header-menu-wishlist"><img64 src="<BaseLoja>images/product-wishlist.svg" width="22" height="22" plain="true"><span>Lista de Desejos</span></span></a>
+  <a href="<url-account>?register=1#Register" class="header-sidenav-link"><span class="header-sidenav-link-position">Cadastro</span></a>
+  <a href="<url-newsletter>" class="header-sidenav-link"><span class="header-sidenav-link-position">Newsletter</span></a>
+  <a href="<url-contact>" class="header-sidenav-link"><span class="header-sidenav-link-position">Contato</span></a>
+  <a href="<url-categories>" class="header-sidenav-link"><span class="header-sidenav-link-position"><categorias></span></a>
+  <ListPathCat out="10" id="-5">
+</div>
+
+<div class="row HeaderMainbar">
+  <div class="MainContainer">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+      <div class="header-mainbar-flex">
+        <div class="header-mainbar-flex-mobile-menu" onclick="headerOpenNav()"><img alt="Menu" title="Menu" src="<PathTo file="images/icon-menu.svg">" loading="lazy" width="35" height="35"></div>
+        <div class="header-mainbar-flex-logo"><a href="<StoreDomain>"><img alt="<NomeLoja>" title="<NomeLoja>" src="<PathTo file="images/logotopo.png">" class="HeaderLogo"></a></div>
+        <div class="child-header-mainbar header-mainbar-flex-menu hide-small hide-medium hide-large show-xlarge">
+          <ul class="SmallMenuList HeaderMenuULFC">
+            <a href="<url-sale>"><li class="HeaderMenuSaleMobileFC font-bold">Promoções</li></a>
+            <a href="<url-release>"><li class="HeaderMenuReleaseMobileFC font-bold">Lançamentos</li></a>
+          </ul>
+        </div>
+        <div class="child-header-mainbar header-mainbar-flex-search speech" id="search-box">
+          <form name="TopSearchForm" method="GET" id="autocomplete-form" action="<url-prod>">
+            <input type="hidden" name="<par-typed>" value="true">
+            <input type="text" id="autocomplete" value="<SearchText>" name="<par-text>" class="InputTextBusca" placeholder="Digite sua busca aqui">
+            <img class="header-speech-icon" id="voiceSearch" onclick="sF$.fnStartDictation()" src="<BaseLoja>images/icon-speech.svg?cccfc=1" loading="lazy" width="24" height="24" alt="Fale" />
+            <button id="search-button" type="submit" aria-label="Buscar">                     
+              <img src="<BaseLoja>images/iconsearch.svg?cccfc=1" loading="lazy" width="22" height="22" alt="Buscar" id="voiceSearchMGlass">
+            </button>
+          </form>
+        </div>
+        <div class="header-mainbar-flex-cart">
+          <div class="HeaderBasket">
+            <a style="cursor:pointer;" onclick="Cart$.fnShowCartCheckout();">
+              <img64 src="<BaseLoja>images/iconcart.svg" plain="true">
+              <div class="HeaderCartItensPosition hide-small hide-medium show-large show-xlarge"><span id="idCartItemsTop" class="HeaderCartNumberProds"></span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="header-space-top"></div>
+
+<div class="header-login-row hide-small">
+  <div class="row">
+    <div class="MainContainer">
+      <div class="col-small-12 col-medium-7 col-large-7 col-xlarge-7 text-left">
+        <ul class="HeaderContainerSocialLoginUL">
+          <li class="HeaderContainerSocialLoginIconUser"><img id="UserImage" src="<PathTo file="images/iconuser.svg">" loading="lazy" width="20" height="20" alt="Login usuário">&nbsp;</li>
+          <li class="HeaderContainerSocialLoginPosition" id="Header_SocialLogin_NamePosition"><span class="loginInfo"></span></li>
+        </ul>
+      </div>
+      <div class="col-small-12 col-medium-5 col-large-5 col-xlarge-5 text-right">
+        <div class="header-free-order"><b>FRETE GRÁTIS</b> acima de R$ 199,99</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Receive Banner Home -->
+<div id="FC-ShowHomeBanners"></div>
+<!-- End Banner Home -->
+
+<div class="FullSpaceFC"></div>
+
+<!-- Begin Aside BarraEsquerda.htm - Close Rodape.htm - Don't remove -->
+<div class="MainContainer">
+  <div class="row">
