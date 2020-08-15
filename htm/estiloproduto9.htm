@@ -1,0 +1,130 @@
+<!-- Fastcommerce - EstiloProduto9.htm (Fast Preview Modelo) -->
+<ProdTop>
+<base target="_parent">
+<script>var IsFramePage=true;</script>
+<script src='<PathTo file="htm/js/store-lib.js">'></script>
+<link rel="stylesheet" href="/wave/v3/wavemin.css?cccfc=1">
+<link href="<PathTo file="htm/css/fc_grid_v1.css">" rel="stylesheet" type="text/css">
+<script src="<PathTo file="htm/js/fc_grid_v1.js">"></script>
+<IncludeTagged src="htm/lojasite.css" async>
+<link rel="stylesheet" href="/js/magictoolbox/magiczoomplusv1/magiczoomplus.css?cccfc=1" />
+<script src="/js/magictoolbox/magiczoomplusv1/magiczoomplus.js?cccfc=1"></script>
+<script>sF$.fnLinkDisp();</script>
+<style type="text/css">body{background:#ffffff;}</style>
+
+<script>
+var sTopLoc=top.location.href.toLowerCase();
+var bFromCart=(sTopLoc.search("<url-add-product>")>0 || sTopLoc.search("<url-add-multiple-products>")>0);
+if(bFromCart){window.onunload=function(){top.location.reload()};}
+</script>
+</ProdTop>
+
+<ProdLista><!-- Prod Lista --></ProdLista>
+
+<ProdDet>
+
+
+<div class="row fc-proddet-preview">
+  <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left fc-proddet-preview-name">
+    <h1 id="idNameProductGridFC"><NomeProd></h1>
+  </div>
+  <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6" id="idDivGridImg">
+    <a href="<ImagemProdAmp>" class="MagicZoomPlus" rel="hint:false;initialize-on: mouseover;"><img src="<ImagemProdDet>" alt="<NomeProd>" onError="MostraImgOnError(this,0)"></a>
+  </div>
+  <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6 text-left DivProductDet">
+    <div class="DivProductDet-sku">Ref: <small id="idCodProdGrid"><CodProd></small>
+    <script type="text/javascript">
+            iQtdOp=<OpiniaoQtd>;
+            if(iQtdOp==0){document.write("<a href='<url-product-review><IDProduto>'><div class='ProductStyleReviewOffBoxFC'><div class='NotaOpiniaoVazio NotaOpiniaoVazio1'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio2'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio3'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio4'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio5'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio6'></div></div></a>")}
+            else {document.write("<a href='<url-product-review><IDProduto>'><div class='ProductStyleReviewOnBoxFC'><div class='ProductStyleReviewStarsOnFC'><OpiniaoMedia></div></a><div class='ProductStyleReviewQtyOnFC'>(<a href='#OP' style='text-decoration:none;'><OpiniaoQtd></a>)</div></div>")}
+    </script>
+    </div>
+    <div>
+      <p class="prod-price" id="idPriceGridFC<IDProduto>">
+        <PrecoSimples>     
+      </p>
+      <script>(function(){ var e=document.getElementById("idPriceGridFC"); if(e)e.innerHTML += fnMaxInstallmentsGrid(<PrecoNum>,<MaxParcelasProdNum>) + fnShowEconomyGrid(<PrecoNum>,<PrecoOri>); })(); </script>
+    </div>
+    <p id="idPriceAVista">
+      <script>sF$.fnMostraDescontoProdDet(<PrecoNum>);</script>
+    </p>
+   <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 FCGridMain" id="idMainGridFC_<IDProduto>"></div>
+    <div class="ProductStyleBoxFC">
+      <ul class="ProductStyleULFC">
+        <li><p class="DescrLineHeight"><DescricaoCurta></p></li>
+        <li><ProdFilters></li> 
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Javascript ZipCode - Description CrossSelling -->
+<script>
+FCLib$.onReady(sF$.fnCustomizeIconsSocialNetworks(true));
+fnShowCEP(<IDProduto>);
+
+jQuery(".EstNameProdCross").addClass('text-overflow');
+</script>
+
+<script>
+fnShowCEPGrid(<IDProduto>); /*FC simulação de frete */
+</script>
+
+<script>
+var GridLib_<IDProduto>$=(function(){
+  var oProdTags={
+    ImagemProdDet:"<ImagemProdDet>",
+    ImagemProdAmp:"<ImagemProdAmp>",
+    CorVal:"<CorVal>",
+    CorRGB:"<CorRGB>",
+    IDProduto:<IDProduto>,
+    CodProd:"<CodProd>",
+    Estoque:<Estoque>,
+    PesoNum:"<PesoNum>",
+    PrecoOri:"<PrecoOri>",
+    PrecoNum:"<PrecoNum>",
+    MaxParcelasProdNum:<MaxParcelasProdNum>,
+    Adicional1Val:"<Adicional1Val>",
+    Adicional2Val:"<Adicional2Val>",
+    Adicional3Val:"<Adicional3Val>",
+    AdicionalD1Val:"<AdicionalD1Val>",
+    AdicionalD2Val:"<AdicionalD2Val>",
+    AdicionalD3Val:"<AdicionalD3Val>",
+    NomeAdicional1:"<NomeAdicional1>",
+    NomeAdicional2:"<NomeAdicional2>",
+    NomeAdicional3:"<NomeAdicional3>",
+    NomeAdicionalD1:"<NomeAdicionalD1>",
+    NomeAdicionalD2:"<NomeAdicionalD2>",
+    NomeAdicionalD3:"<NomeAdicionalD3>"
+  };
+
+  var aSubProdTags=[];
+  <sub>
+    aSubProdTags.push({
+      ImagemProdDet:"<ImagemProdDet>",
+      ImagemProdAmp:"<ImagemProdAmp>",
+      CorVal:"<CorVal>",
+      CorRGB:"<CorRGB>",
+      IDProduto:<IDProduto>,
+      CodProd:"<CodProd>",
+      Estoque:<Estoque>,
+      PesoNum:"<PesoNum>",
+      PrecoOri:"<PrecoOri>",
+      PrecoNum:"<PrecoNum>",
+      MaxParcelasProdNum:<MaxParcelasProdNum>,
+      Adicional1Val:"<Adicional1Val>",
+      Adicional2Val:"<Adicional2Val>",
+      Adicional3Val:"<Adicional3Val>",
+      AdicionalD1Val:"<AdicionalD1Val>",
+      AdicionalD2Val:"<AdicionalD2Val>",
+      AdicionalD3Val:"<AdicionalD3Val>"
+    });
+  </sub>
+  FCGrid$.fnGridAll(oProdTags,aSubProdTags);
+})();
+</script>
+<!-- End: JS scripts grid -->
+</ProdDet>
+
+<ProdAmp><!-- Prod Amp --></ProdAmp>
+<ProdBottom></ProdBottom>
