@@ -1,0 +1,82 @@
+<div class="FCCheckoutLogin"><Login></div>
+<div class="FCCheckoutMain">  
+  <div id="idChkTopFC" class="FCChkOrderConfirmationFloat"><OrderConfirmation></div>  
+  <div id="idChkCol1FC" class="FCRegisterChk">
+    <Register>
+  </div>
+  <div id="idChkCol2FC" class="FCFreightChk">
+    <span id="idChkIniCol2FC"></span>
+    <div id="idChkTagsCol2FC"><OrderCompletion><Freight><Payment></div>
+  </div>
+  <div id="idChkCol3FC" class="FCCartChk"><Cart></div>
+  <div id="idChkBottomFC"></div>
+</div>
+<script>
+var bShowCupomCheckout=true;
+function FuncChkRegisterEnd(){
+  if(F$.Step==2){
+    window.onscroll=null;
+    document.getElementById('idChkTagsCol2FC').style.position='relative';
+    document.getElementById('idChkExtCartFC').style.position='relative';
+    document.getElementById('idTitCartFC').classList.add("remove-step-four");
+  }else if(F$.Step==1){
+    if(bShowCupomCheckout)fnShowCupom();  //Chama função que exibe campo para cupom
+  }
+}
+
+function FuncChkRegisterBegin(){
+  if(F$.Step==1 && (F$.FreightValue=='' || F$.FreightValue==null)){
+    F$.GetID("idChkPaymentFC").innerHTML="<div id=idChkPaymentIntFC class=EstChkDiv><div id=idTitPaymentFC class=EstTitCheckoutFC>Pagamento</div><p>As op&ccedil;&otilde;es de pagamento ser&atilde;o exibidas ap&oacute;s a etapa da escolha do frete.</p></div>";
+  }
+}
+
+// Cupom Checkout
+function FuncChkCartEnd(){
+  if(bShowCupomCheckout && F$.Step==1)fnShowCupom();  //Chama função que exibe campo para cupom
+}
+
+function fnShowCupom(){
+  var oCupom=document.getElementById("idCupom");
+  var oDivCupom=document.getElementById("DivCupom");
+  if(!oCupom && !oDivCupom && F$.Step==1){ //Se já tem cupom no cálculo não exibe campo de cupom. Só exibe no passo 1
+    var oInsert=document.getElementById("idCartItemsFC");
+    if(oInsert){
+      var oNewElement=document.createElement("tr");
+      oNewElement.setAttribute("id","CupomCheckout");
+      oNewElement.innerHTML="<td colspan='2' class='EstTabPedidoTotal'><div id='DivCupom'><div class='FCCartCupomLabel-checkout'>Informe seu cupom (opcional):</div><div class='FCCartCupomInputCheckout'><input type='text' name='Cupom' id='Cupom' maxlength='30' class='FCCartCupomInput'><button id='FCCartCupomButCheckout' onclick='fnCupomApply()'>Aplicar cupom</button></div></div></td>";
+      fnInsertAfter(oNewElement,oInsert);
+    }
+  }
+}
+
+function fnCupomApply(){
+  var oCupom=document.getElementById("Cupom");
+  if(oCupom){
+    var sCupom=oCupom.value;
+    if(sCupom!=""){AjaxExecFC(FCLib$.uk("url-contact"),"cupom="+ sCupom,false,fnCallBackCupom);}
+  }
+}
+
+function fnCallBackCupom(){
+  F$.fnUpdateCart(); //Atualiza cart
+  setTimeout(
+    function(){
+      var oCupom=document.getElementById("idCupom");
+      if(!oCupom){
+        //Se atualizou cart e não tem cupom no cálculo é porque o cupom era inválido
+        var oDivCupom=document.getElementById("DivCupom");
+        if(oDivCupom){
+          var oNewElement=document.createElement("div");
+          oNewElement.setAttribute("id","MsgErrCupom");
+          oNewElement.innerHTML="<div style='color:#FF0000;padding:5px;font-size:13px;'>Cupom inválido</div>";
+          fnInsertAfter(oNewElement,oDivCupom);
+        }
+      }
+    }
+  ,500); 
+}
+
+function fnInsertAfter(newNode,referenceNode) {
+  referenceNode.parentNode.insertBefore(newNode,referenceNode.nextSibling);
+}
+</script>
