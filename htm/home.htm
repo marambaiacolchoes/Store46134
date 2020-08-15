@@ -1,0 +1,62 @@
+<!-- Begin Home -->
+<div class="col-large-12 col-mlarge-12 col-xlarge-12">
+  <div class="MainHomeBoxTitFC text-left">
+    <h1>Produtos em Promoção</h1>
+  </div> 
+  <div class="row">
+    <div class="col-small-6 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-3"><prod out="p255" em="prom,rand"></div>
+    <div class="col-small-6 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-3"><prod out="p255" em="prom,rand"></div>
+    <div class="col-small-6 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-3"><prod out="p255" em="prom,rand"></div>
+    <div class="col-small-6 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-3"><prod out="p255" em="prom,rand"></div>
+  </div>
+  <div class="main-home-space-rows"></div>
+  <div class="MainHomeBoxTitFC text-left">
+    <h2>Produtos em Lançamento</h2>
+  </div>
+  <div class="row">
+    <div class="col-small-6 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-3"><prod out="p255" em="lanc,rand"></div>
+    <div class="col-small-6 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-3"><prod out="p255" em="lanc,rand"></div>
+    <div class="col-small-6 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-3"><prod out="p255" em="lanc,rand"></div>
+    <div class="col-small-6 col-medium-3 col-large-3 col-mlarge-3 col-xlarge-3"><prod out="p255" em="lanc,rand"></div>
+  </div>
+  <div class="main-home-space-rows"></div>
+</div>
+
+<div class="MainContainer">
+  <div class="row">
+    <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6 text-center">
+      <a href="<url-sale>"><img src="<PathTo file="images/footer-banner-1.png">" width="100%" alt="Produtos com desconto. Compre agora!"></a>
+    </div>
+    <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6 text-center">
+      <a href="<url-help>"><img src="<PathTo file="images/footer-banner-2.png">" width="100%" alt="Esclareça suas dúvidas. Mais informações!"></a>
+    </div>
+  </div>
+</div>
+
+<!-- Begin Banners -->
+<div id="FC-HideHomeBanners" style="display:none;">
+  <link rel=stylesheet href="/css/swiper/v4.2.6/swiper.min.css?cccfc=1">
+  <script src="/js/swiper/v4.2.6/swiper.min.js?cccfc=1"></script>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <script>
+      function fnSlideshowStore() {
+        var numBannerHomeFC = 2;
+        var bannerImageFC = ["<banner-image 11>", "<banner-image 12>", "<banner-image 13>", "<banner-image 14>"];
+        var bannerimageMobileFC = ["<banner-image-mobile 11>", "<banner-image-mobile 12>", "<banner-image-mobile 13>", "<banner-image-mobile 14>"];
+        var bannerRedirFC = ["<banner-redir 11>", "<banner-redir 12>", "<banner-redir 13>", "<banner-redir 14>"];
+        var bannerAltFC = ["<banner-alt 11>", "<banner-alt 12>", "<banner-alt 13>", "<banner-alt 14>"];
+        for (i = 0; i < bannerImageFC.length-(4-numBannerHomeFC); i++) {
+          document.write ('<div class="swiper-slide"><a href="'+ bannerRedirFC[i] +'"><picture><source media="(max-width:1024px)" srcset="'+ bannerimageMobileFC[i] +'"><img alt="'+ bannerAltFC[i] +'" src="'+ bannerImageFC[i] +'"></picture></a></div>');                                                                                                              
+        }
+      }
+      fnSlideshowStore();
+      FCLib$.execLazyLoad();
+      </script>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+<!-- End Banners -->
