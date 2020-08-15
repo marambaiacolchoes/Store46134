@@ -1,0 +1,143 @@
+<!-- Fastcommerce - EstiloProduto8.htm : Grid v1 01.11.2017  (Modelo 3) -->
+<ProdTop>
+<script>var IsFramePage=true;</script>
+<!-- Includes CSS -->
+<link rel="stylesheet" href="/wave/v3/wavemin.css?cccfc=1">
+<script src="<PathTo file="htm/js/store-lib.js">"></script>
+<link href="<PathTo file="htm/css/fc_grid_v1.css">" rel="stylesheet" type="text/css">
+<script src="<PathTo file="htm/js/fc_grid_v1.js">"></script>
+
+<style>
+.FCProdSty8 {padding-top:30px;}
+.FCProdSty8 #idTxtIntroFoundProdsFC {display:none;}
+
+/* CSS PARA LISTA DE GRADE EM POPUP */
+#idNivelGridFC  { width: 70px !important; max-width: 60px !important;}
+.Shoppinglist .FCPrice{margin-bottom: 0;}
+.Shoppinglist .FCDescritorContent{max-width:150px;width:150px;overflow:auto;padding:5px 0 0;min-height:52px;margin-right:10px;display:flex}
+.Shoppinglist .FCBoxGrid img{max-width:100%;width:auto !important;max-height: 37px;border-radius:5px; margin-top: 0;position: relative;}
+body.FCProduct.ProductList .FCBoxGridBuy span.FCStepGridNumber {display:none;}
+.Shoppinglist .FCBtnGrid.FCBtnSelectedOption.FCBtnSelecioneGrid.FCBtnSelecioneGridPosition{padding: 0px!important;}
+.Shoppinglist .FCBtnEsgotadoGrid, .FCBtnConsultenos, .FCBtnComprarGrid, .FCBtnSelecioneGrid{padding: 0px!important;margin: 0px!important;}
+.Shoppinglist .ImgCapaListProd,.ImgCapaProd {line-height:inherit !important}
+.Shoppinglist .DivListProductStyleImagemProd {display: flex;padding: 5px 5px 3px;align-items: center;pointer-events: none}
+.Shoppinglist .DivListProductStyleImagemProd img{max-width:160px;max-height:160px}
+.Shoppinglist .ListProductStyleProd { min-height:50px;margin: 0 auto 30px;background: #f5f5f5; border-radius: 10px;padding:10px;}
+.Shoppinglist .ListProductStyleProd:hover{background: #eaeaea;box-shadow: 1px 1px 18px -2px rgba(107, 107, 107, 0.25);}
+.Shoppinglist .EstParc{width: 100%;display:block;margin: 5px auto 0 !important;color:#0fbc0f;font-size: 14px!important; text-align: right;}
+.Shoppinglist .ProductPriceGrid {border-top: 1px solid #f1f0f0;height:60px;}
+.Shoppinglist .ProductPriceGrid .prod-price br,.FCOptionSelected {display: none;}
+.Shoppinglist .ProductPriceGrid .prod-price {color:#8e8e8e;}
+.Shoppinglist .EstParcPrice { margin-left: 2px;}
+.Shoppinglist .ListProductStyleNomeProd{ text-align:left;font-size: 20px;border-bottom: 1px solid #eee;}
+.Shoppinglist .FCTxtGrid{font-size: 14px;text-align: left;padding:10px 0 0}
+.Shoppinglist .FCGridMain {display:flex;flex-wrap:wrap;position:relative}
+.Shoppinglist .FCBoxGrid{width:auto;padding: 10px 0 0px;}
+.Shoppinglist .col-small-12.col-medium-12.ColToPrice {padding: 0;}
+.FCGridAdicContent.FCGridAdicProductList,.FCResumeProduct {display: none}
+.Shoppinglist .FCBoxGridBuy .FCStepGridNumber { margin-top: 0px;}
+.Shoppinglist .col-small-6.col-medium-3 {padding:0;}
+.Shoppinglist .FCTooltipGrid {max-width: 200px;}
+.Shoppinglist p.prod-price {display: flex;flex-wrap: wrap;justify-content: flex-end;}
+.Shoppinglist span.FCPrice span.FCPriceValue {margin-right: 0px;font-size:30px;}
+.Shoppinglist .GlobalSavePrice {margin: 5px 0 0;display: block;text-align: right; width: 100%;}
+.Shoppinglist .ImgCapaListProd.DivListproductStyleImagemZoom img {width:150px;height:180px;display: block;margin: 0 auto;}
+.Shoppinglist .oldPrice {margin-right: 10px;}
+.Shoppinglist .oldPrice span { font-weight: normal;font-size: 16px;}
+.Shoppinglist .GlobalSavePrice{font-size: 13px;color: rgb(68, 172, 85)}
+.Shoppinglist .FCStepGrid {    min-height: auto;}
+.Shoppinglist .FCGridMain .FCDescritorGrid{border-radius: 5px}
+.Shoppinglist .FCDescritorContent li{border-radius: 7px}
+.Shoppinglist .FCStepGridNumber {background:<tag-FCCSSMainColor> !important;float: none;}
+.Shoppinglist .FCDescritorGridDisabled .FCDescritorGrid{background:#dddddd;color:#686868;cursor:not-allowed;border-radius: 5px;white-space: nowrap;}
+.Shoppinglist .FCSelectedGrid span{background:#eceaea;}
+.Shoppinglist .prod-price {visibility:hidden;}
+.Shoppinglist .prod-price span {visibility: visible;}
+.Shoppinglist .FCBoxGridBuy.FCBoxGridOnly{/*margin:1em auto 0;*/margin:15px auto 0;}
+.Shoppinglist .FCBoxGridBuy {position:absolute;top:100%;left:0px;}
+.Shoppinglist strike {padding: 10px 0;left: 5%;position: relative;}
+strike span {font-size: 16px!important;margin-right: 0px;}
+/* CSS PARA LISTA DE GRADE EM POPUP */
+</style>
+</ProdTop>
+<ProdLista>
+  <div class="Shoppinglist">
+    <FormProd>
+      <div class="ListProductStyleProd">
+        <div class="row">
+          <div class="col-small-6 col-medium-3">
+            <div class="DivListProductStyleImagemProd">
+              <div id="id-video-image<IDProduto>"><ImagemProd></div>
+            </div>
+          </div>
+          <div class="col-small-6 col-medium-9">
+            <div class="ListProductStyleNomeProd"><NomeProd></div>
+            <!-- Begin: Grid Content -->
+            <div class="FCGridMain" id="idMainGridFC_<IDProduto>"></div>
+            <div class="row">
+              <div class="col-small-12 col-medium-12 ColToPrice">
+                <div class=ProductPriceGrid>
+                <p class="prod-price" id="idPriceGridFC<IDProduto>"><Preco></p>
+                <script>(function(){ var e=document.getElementById("idPriceGridFC<IDProduto>"); if(e)e.innerHTML += fnMaxInstallmentsGrid(<PrecoNum>,<MaxParcelasProdNum>) + fnShowEconomyGrid(<PrecoNum>,<PrecoOri>); })(); </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </FormProd>
+  </div>
+<script>
+var GridLib_<IDProduto>$=(function(){
+  var oProdTags={
+    ImagemProdDet:"<ImagemProdDet>",
+    ImagemProdAmp:"<ImagemProdAmp>",
+    CorVal:"<CorVal>",
+    CorRGB:"<CorRGB>",
+    IDProduto:<IDProduto>,
+    CodProd:"<CodProd>",
+    Estoque:<Estoque>,
+    PesoNum:"<PesoNum>",
+    PrecoOri:"<PrecoOri>",
+    PrecoNum:"<PrecoNum>",
+    MaxParcelasProdNum:<MaxParcelasProdNum>,
+    Adicional1Val:"<Adicional1Val>",
+    Adicional2Val:"<Adicional2Val>",
+    Adicional3Val:"<Adicional3Val>",
+    AdicionalD1Val:"<AdicionalD1Val>",
+    AdicionalD2Val:"<AdicionalD2Val>",
+    AdicionalD3Val:"<AdicionalD3Val>",
+    NomeAdicional1:"<NomeAdicional1>",
+    NomeAdicional2:"<NomeAdicional2>",
+    NomeAdicional3:"<NomeAdicional3>",
+    NomeAdicionalD1:"<NomeAdicionalD1>",
+    NomeAdicionalD2:"<NomeAdicionalD2>",
+    NomeAdicionalD3:"<NomeAdicionalD3>"
+  };
+
+  var aSubProdTags=[];
+  <sub>
+    aSubProdTags.push({
+      ImagemProdDet:"<ImagemProdDet>",
+      ImagemProdAmp:"<ImagemProdAmp>",
+      CorVal:"<CorVal>",
+      CorRGB:"<CorRGB>",
+      IDProduto:<IDProduto>,
+      CodProd:"<CodProd>",
+      Estoque:<Estoque>,
+      PesoNum:"<PesoNum>",
+      PrecoOri:"<PrecoOri>",
+      PrecoNum:"<PrecoNum>",
+      MaxParcelasProdNum:<MaxParcelasProdNum>,
+      Adicional1Val:"<Adicional1Val>",
+      Adicional2Val:"<Adicional2Val>",
+      Adicional3Val:"<Adicional3Val>",
+      AdicionalD1Val:"<AdicionalD1Val>",
+      AdicionalD2Val:"<AdicionalD2Val>",
+      AdicionalD3Val:"<AdicionalD3Val>"
+    });
+  </sub>
+  FCGrid$.fnGridAll(oProdTags,aSubProdTags);
+})();
+</script>
+</ProdLista>
