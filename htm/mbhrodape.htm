@@ -1,0 +1,68 @@
+</section>
+
+<footer>
+  <nav class="amp-nav">
+    <a href="<PathAMP url="/">">Home</a>
+      <section class="amp-accordion">
+        <h4 class="amp-accordion-title" accordion><Categorias></h4>
+        <div class="amp-cats-accordion" accordion-content>
+          <ListPathCat out="13" id="-1">
+        </div>
+      </section>
+    <a href="<url-account>?wishlist=1#Wishlist">Lista de Desejos</a>
+    <a href="<url-account>">Minha conta</a>
+    <a href="<url-account>?orders=1#Orders">Meus pedidos</a>
+    <a href="<PathAMP url="<url-news>">">Notícias</a>
+    <a href="<PathAMP url="<url-help>">">Ajuda</a>
+    <a href="<url-contact>">Fale conosco</a>
+  </nav>
+
+  <div class="container">
+    <div class="amp-footer-socials" id="idShareHeader">
+       <div class="amp-social-share-twitter"><ShareTwitter></div>
+       <div class="amp-social-share-gplus"><ShareGooglePlus></div>
+       <div class="amp-social-share-email"><a href="<url-store-suggest>"></a></div>
+       <div class="amp-social-share-pinterest"><SharePinterest></div>
+       <div class="amp-social-share-whatsapp"><a href="#na" target="_blank" id="idLinkWhatsApp"></a></div>
+       <div class="amp-social-share-facebook"><ShareFacebook></div>
+    </div>
+  </div>
+  
+  <div class="container amp-footer">
+    <div class="amp-footer-infos">
+      <span><CompanyName></span>
+      <span>CNPJ <CompanyDocument></span>
+      <span><CompanyPhone></span>
+    </div>
+    <div class="amp-footer-container-badges-safe">
+      <div class="amp-footer-container-badges-all-safe"><a href="https://www.fastcommerce.com.br/security-badge.ehc?url=<StoreDomain>" target="_blank" rel="noopener"><img src="/security-badge.ehc" loading="lazy" width="163" height="50" alt="Safe Site" title="Safe Site"></a></div>
+    </div>
+  </div>
+
+  <div class="container amp-footer-powered">
+    <a href="https://www.fastcommerce.com.br/?origem=tecfcamp" target="_blank"><span>Powered by</span>
+      <img src="<PathTo file="/images/fastcommerce.svg">" loading="lazy" width="100" height="25" alt="fastcommerce" />
+    </a>
+  </div>
+</footer>
+
+<script>
+fnSpeechRecognitionIOS();
+fnNewsVoiceSearch();
+if(FC$.Page=="Checkout"){    
+  FCLib$.loadAsyncCSS('<PathTo file="htm/css/mbhcheckout.css">');
+  function FuncChkRegisterEnd(){
+    if(F$.Step==1 && (F$.FreightValue=='' || F$.FreightValue==null))F$.GetID("idChkPaymentFC").innerHTML="<div id=idChkPaymentIntFC class=EstChkDiv><div id=idTitPaymentFC class=EstTitCheckoutFC>Pagamento</div><p>As op&ccedil;&otilde;es de pagamento ser&atilde;o exibidas ap&oacute;s a etapa da escolha do frete.</p></div>";
+    if(F$.Step==2){
+      window.onscroll=null;
+      document.getElementById('idTitCartFC').style.background='none';
+    }
+  }
+}
+plugins(document);
+fnInsertLinkWhatsApp();
+</script>
+
+<script>FCLib$.loadAsyncCSS('/inc.ehc?f=css/mbhstore-async.css&y=<Y>');</script>
+<link rel="stylesheet" href="<BaseLoja>htm/css/mbhswipermin.css">
+<script src="<BaseLoja>htm/js/mbhswipermin.js"></script>
