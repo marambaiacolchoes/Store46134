@@ -2,6 +2,44 @@
 </div>
 <!-- End Aside BarraEsquerda.htm - Open BarraTopo.htm - Don't remove -->
 
+<!-- margin-top space -->
+<div class="row FullSpaceFC"></div>
+
+<!-- Begin: 3 banners - Payment, Locker and Delivery -->
+<div class="MainContainer InfoBanners">
+  <div class="row">
+    <!-- Begin: Banner Payment -->
+    <div class="col-small-12 col-medium-12 col-large-6 col-mlarge-3 col-xlarge-3 text-center FooterInfosContainer">
+      <a href="<url-help>?#Pagamento">
+        <img64 src="<BaseLoja>images/meiospagamento.svg" plain="true" width="300" height="100" alt="Veja nossas formas de pagamento" title="Veja nossas formas de pagamento">
+      </a>
+    </div>
+    <!-- End: Banner Payment -->
+    <!-- Begin: Banner Locker -->
+    <div class="col-small-12 col-medium-12 col-large-6 col-mlarge-3 col-xlarge-3 text-center FooterInfosContainer">
+      <a href="<url-help>?#Seguranca">
+        <img64 src="<BaseLoja>images/lojasegura.svg" plain="true" width="300" height="100" alt="Veja nossos selos de Loja Segura" title="Veja nossos selos de Loja Segura">
+      </a>
+    </div>    
+    <!-- End: Banner Locker -->
+    <!-- Begin: Banner Delivery -->
+    <div class="col-small-12 col-medium-12 col-large-6 col-mlarge-3 col-xlarge-3 text-center FooterInfosContainer">
+      <a href="<url-help>?#Entregas">
+        <img64 src="<BaseLoja>images/tiposdefrete.svg" plain="true" width="300" height="100" alt="Conheça nossos tipo de frete" title="Conheça nossos tipo de frete">
+      </a>
+    </div>
+    <!-- End: Banner Delivery -->
+    <!-- Begin: Contact -->
+    <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-3 col-mlarge-3 text-center FooterInfosContainer">
+      <a href="<url-contact>">
+        <img64 src="<BaseLoja>images/faleconosco.svg" plain="true" width="300" height="100" alt="Alguma dúvida? Fale conosco" title="Alguma dúvida? Fale conosco">
+      </a>
+    </div>
+    <!-- End: Contact -->
+  </div>
+</div>
+<!-- End 3 banners - Payment, Locker and Delivery -->
+
 <!-- Begin Page History -->
 <div class="MainContainer hide-small">
   <div class="row">
@@ -12,19 +50,15 @@
 </div>
 <!-- End Page History -->
 
-<!-- margin-top space -->
-<div class="row FullSpaceFC"></div>
-<div class="footer-line-separator"></div>
-
 <!-- Begin: Menu, Newsletter and Address -->
-<div class="FooterMainBarFC">
+<div class="FootterMainBarFC">
   <div class="row">
     <div class="MainContainer">
       <!-- Begin Menu Produtos -->
       <div class="col-small-12 col-medium-6 col-large-3 col-xlarge-3 text-left FooterSpaceContainerFC">
-        <span class="title-footer font-bold">Produtos</span>
-        <ul>
-          <li><a href="/">Home</a></li>
+        <span class="title-footer">Produtos</span>
+        <ul class="FooterULMenuFC" id="FooterNav1">
+          <li class="FooterMenuSelectedNav1"><a href="/">Home</a></li>
           <li><a href="<url-categories>"><Categorias></a></li>
           <li><a href="<url-sale>">Promoções</a></li>
           <li><a href="<url-release>">Lançamentos</a></li>
@@ -33,12 +67,12 @@
           <li><a href="<url-prod>?order=5">Melhores avaliados</a></li>
         </ul>
       </div>
-
+      <!-- End Menu Produtos -->
       <!-- Begin Menu Minha conta -->
       <div class="col-small-12 col-medium-6 col-large-3 col-xlarge-3 text-left FooterSpaceContainerFC">
-        <span class="title-footer font-bold">Minha conta</span>
-        <ul>
-          <li><a href="<url-add-product>">Carrinho de compras</a></li>
+        <span class="title-footer">Minha conta</span>
+        <ul class="FooterULMenuFC" id="FooterNav2">
+          <li class="FooterMenuSelectedNav2"><a href="<url-add-product>">Carrinho de compras</a></li>
           <li><a href="<url-account>?orders=1#Orders">Meus pedidos</a></li>
           <li><a href="<url-account>?wishlist=1#Wishlist">Lista de desejos</a></li>
           <li><a href="<url-account>?register=1#Register">Cadastro</a></li>
@@ -47,108 +81,114 @@
           <li><a href="<url-store-suggest>">Indique a loja</a></li>
         </ul>
       </div>
-
+      <!-- End Menu Minha conta -->
       <!-- Begin Menu Informações -->
       <div class="col-small-12 col-medium-6 col-large-3 col-xlarge-3 text-left FooterSpaceContainerFC">
-        <span class="title-footer font-bold">Informações</span>
-        <ul>
-          <li><a href="<url-help>">Central de ajuda</a></li>
+        <span class="title-footer">Informações</span>
+        <ul class="FooterULMenuFC" id="FooterNav3">
+          <li class="FooterMenuSelectedNav3"><a href="<url-help>">Central de ajuda</a></li>
           <li><a href="<url-news>">Notícias</a></li>
           <li><a href="<url-help>?#Entregas">Entrega</a></li>
           <li><a href="<url-help>?#Seguranca">Segurança</a></li>
           <li><a href="<url-contact>">Fale conosco</a></li>
-        </ul>                   
+        </ul>
+        <ul class="ProductStyleULFC FooterSocialIcons">
+          <li id="idShareFooter">
+            <span><a href="<url-store-suggest>"><img64 src="<baseloja>images/iconprodemail.svg" plain="true" width="20" height="20" border="0" alt="E-mail" title="Recomende a loja"></a></span>
+            <span><ShareFacebook></span>
+            <span><ShareTwitter></span>
+            <span><SharePinterest></span>
+          </li>
+        </ul>                    
       </div>
-
+      <!-- End Menu Informações -->
       <!-- Begin Newsletter and Address -->
       <div class="col-small-12 col-medium-6 col-large-3 col-xlarge-3 text-left FooterSpaceContainerFC">
         <!-- Begin Newsletter -->
         <div>
-          <span class="title-footer font-bold">Receba nossas promoções</span>
-          <p class="footer-newsletter-text font-regular">Inscreva-se para receber ofertas e descontos!</p>
+          <span class="title-footer">Receba nossas promoções</span>
           <span style="white-space:nowrap;">
             <form name="FormCadNewsletter" method="GET" action="<url-newsletter>" onsubmit="return ValidaCadNewsletter(this);">
-            <input type="hidden" name="FormatoHTML" value="True">
-            <span class="FooterInputPosition"><input type="email" name="Email" class="FooterNewsletterInput" placeholder="Digite seu e-mail"></span>
-            <span class="FooterInputBtnPosition"><button class="footer-newsletter-submit-button" type="submit" name="ok" value="Enviar"><span> Enviar </span></button></span>
+              <input type="hidden" name="FormatoHTML" value="True">
+              <input type="hidden" name="EnviarAssinante" value="Enviar">
+              <span class="FooterInputPosition"><input type="email" name="Email" class="FooterNewsletterInput" placeholder="Digite seu e-mail"></span>
+              <span class="FooterInputBtnPosition"><input type="image" src="<PathTo file="images/iconnewsletter.svg">" width="38" height="38" name="ok" value="Enviar"></span>
             </form>
           </span>
         </div>
-        <div class="FooterMainBarFC-socialshare">
-          <span class="title-footer font-bold">Compartilhe</span>
-          <ul>
-            <li id="idShareFooter">
-              <span><a href="<url-store-suggest>"><img width="40" height="43" alt="Seu pedido com Segurança" title="Recomende a loja" src="<PathTo file="images/iconprodemail.svg">" loading="lazy"></a></span>
-              <span><ShareFacebook></span>
-              <span><ShareTwitter></span>
-              <span><SharePinterest></span>
-            </li>
+        <!-- End Newsletter -->
+        <!-- Begin Address -->
+        <div class="FooterNewsletterBoxFC">
+          <span class="title-footer">Contatos da loja</span>
+          <ul class="FooterAddressFC FooterULMenuFC">
+            <li><span class="FooterAddressIconFC"><img64 src="<BaseLoja>images/iconcompanyname.svg" width="18" height="18" plain="true"></span> <span class="FooterCompanyTxtFC"><CompanyName></span></li>
+            <li><span class="FooterAddressIconFC"><img64 src="<BaseLoja>images/icondocument.svg" width="18" height="18" plain="true"></span> <span class="FooterCompanyTxtFC">CNPJ <CompanyDocument></span></li>
+            <li style="white-space:nowrap;"><span class="FooterAddressIconFC"><img64 src="<BaseLoja>images/iconpointer.svg" width="18" height="18" plain="true"></span> <span class="FooterCompanyTxtFC"><CompanyAddress></span></li>
+            <li class="FooterCompanyPhoneFC"><span class="FooterAddressIconFC"><img64 src="<BaseLoja>images/iconcomphone.svg" width="18" height="18" plain="true"></span> <span class="FooterCompanyTxtFC"><CompanyPhone></span></li>
           </ul>
         </div>
+        <!-- End Address -->
       </div>
+      <!-- End Newsletter and Address -->
     </div>
   </div>
-</div>
-
-<!-- Payments / Company -->
-<div class="footer-company">
-  <div class="MainContainer">
-    <div class="row">
-      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-center">
+  <!-- Begin Payment and Security -->
+  <div class="row">
+    <div class="MainContainer">
+      <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6 text-left">
+        <span class="FooterTitleTxt">Formas de Pagamento</span>
         <ul class="FooterULPaymentFC">
-          <li><img src="<PathTo file="images/icpagtovs_3.png">" loading="lazy" width="50" height="32" alt="Visa"></li>
-          <li><img src="<PathTo file="images/icpagtomc_3.png">" loading="lazy" width="50" height="32" alt="MasterCard"></li>
-          <li><img src="<PathTo file="images/icpagtobb_3.png">" loading="lazy" width="50" height="32" alt="Boleto Bancário"></li>
-          <li><img src="<PathTo file="images/icpagtodb_3.png">" loading="lazy" width="50" height="32" alt="Depósito Bancário"></li>
+          <li><img src="<PathTo file="images/icpagtovs_3.png">" loading="lazy" width="65" height="41" alt="Visa"></li>
+          <li><img src="<PathTo file="images/icpagtomc_3.png">" loading="lazy" width="65" height="41" alt="MasterCard"></li>
+          <li><img src="<PathTo file="images/icpagtobb_3.png">" loading="lazy" width="65" height="41" alt="Boleto Bancário"></li>
+          <li><img src="<PathTo file="images/icpagtodb_3.png">" loading="lazy" width="65" height="41" alt="Depósito Bancário"></li>
+        </ul>
+      </div>
+      <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6 text-left">
+        <span class="FooterTitleTxt">Segurança</span>
+        <ul class="FooterULSecurityFC">
+          <li><a href="<url-help>?#Seguranca"><img src="/images/100_https.svg?cccfc=1" loading="lazy" height="50" alt="Seu pedido com Segurança" title="Site Seguro"></a>&nbsp;&nbsp;<a href="https://www.google.com/transparencyreport/safebrowsing/diagnostic/?hl=pt-BR#url=<StoreDomain>" target=_blank><img src="/images/Google_Loja_Segura.svg?cccfc=1" loading="lazy" height="50" alt="Seu pedido com Segurança" title="Site Seguro"></a>&nbsp;&nbsp;<a href="https://www.fastcommerce.com.br/security-badge.ehc?url=<StoreDomain>" target="_blank" rel="noopener"><img src="/security-badge.ehc" loading="lazy" width="163" height="50" alt="Safe Site" title="Safe Site"></a></li>
         </ul>
       </div>
     </div>
-    <div class="row footer-space-lines">
-      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-center">
-        <div class="footer-company-data font-regular"><CompanyName>. CNPJ <CompanyDocument> <br><span class="footer-company-address-spacing"><CompanyAddress></span></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-center">
-        <a href="<url-help>?#Seguranca"><img src="/images/100_https.svg?cccfc=1" loading="lazy" height="50" alt="Seu pedido com Segurança" title="Site Seguro"></a>
-        <a href="https://www.google.com/transparencyreport/safebrowsing/diagnostic/?hl=pt-BR#url=<StoreDomain>" target="_blank" rel="noopener"><img src="/images/Google_Loja_Segura.svg?cccfc=1" loading="lazy" height="50" alt="Seu pedido com Segurança" title="Site Seguro"></a>
-        <a href="https://www.fastcommerce.com.br/security-badge.ehc?url=<StoreDomain>" target="_blank" rel="noopener"><img src="/security-badge.ehc" loading="lazy" width="163" height="50" alt="Safe Site" title="Safe Site"></a>
-      </div>
-    </div>
   </div>
+  <!-- End Payment and Security -->
 </div>
+<!-- End: Menu, Newsletter and Address -->
 
-<!-- Copyright -->
+<!-- Begin: Technology - Copyright -->
 <div class="FooterTecBoxFC">
-  <div class="MainContainer FooterTecHeightFC">
-    <div class="row">
-      <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6 text-left text-small-center">
-       <p class="FooterTecFastcommerce font-regular"><a href="https://www.fastcommerce.com.br/?origem=tecfc&utm_source=Lojas+Fastcommerce&utm_medium=Selo&utm_campaign=Tecnologia+Fastcommerce" target="_blank" rel="noopener">Tecnologia de comércio eletrônico <strong>Fastcommerce</strong></a></p>
-      </div>
-      <div class="col-small-12 col-medium-5 col-large-5 col-xlarge-5 text-right text-small-center">
-       <p class="FooterTecFastcommerce font-regular" >Copyright © <span id="FooterFullYear"></span> <strong><NomeLoja></strong></p>
-      </div>
-      <div class="col-small-12 col-medium-1 col-large-1 col-xlarge-1 text-right text-small-center"></div>
+<div class="MainContainer FooterTecHeightFC">
+  <div class="row">
+    <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6 text-left text-small-center">
+     <p class="FooterTecFastCommerce"><a href="https://www.fastcommerce.com.br/?origem=tecfc&utm_source=Lojas+Fastcommerce&utm_medium=Selo&utm_campaign=Tecnologia+Fastcommerce" target="_blank">Tecnologia de comércio eletrônico <strong>Fastcommerce</strong></a></p>
     </div>
+    <div class="col-small-12 col-medium-5 col-large-5 col-xlarge-5 text-right text-small-center">
+     <p class="FooterTecFastCommerce">Copyright © <span id="FooterFullYear"></span> <strong><NomeLoja></strong></p>
+    </div>
+    <div class="col-small-12 col-medium-1 col-large-1 col-xlarge-1 text-right text-small-center"></div>
   </div>
 </div>
+</div>
 
-<!-- Includes -->
-<link rel="stylesheet" href="/wave/v3/wavemin.css?cccfc=1">
-<script>FCLib$.loadAsyncCSS('<PathTo file="htm/css/jquery_ui.css">');</script>
+<!-- Progress Bar -->
+<link rel="stylesheet" href="<PathTo file="htm/css/nprogress.css">">
 <script>FCLib$.loadAsyncCSS('/inc.ehc?f=css/store-async.css&y=<Y>');</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" defer></script>
-<script src='<PathTo file="htm/js/autosuggest.js">' defer></script>
-<!-- Includes Javascript -->
+<script src="<PathTo file="htm/js/nprogress.js">"></script>
 <script src='<PathTo file="htm/js/store-lib.js">'></script>
+<!-- End: Technology - Copyright -->
 <script>
 sF$.fnLoginUserName("<NomeCliente>","<FotoCliente>");
 fnFooter();
 fnSpeechRecognitionIOS();
 fnNewsVoiceSearch();
-FCLib$.onReady(FCLib$.execWaveInterchange);
+fnProgressBarLoading();
+if(FC$.Page=="Cart" && (FC$.TypeFrt==3 || FC$.TypeFrt==4)){
+  var iValorCesta=<ValorCesta>;
+  fnCustomizeCart();
+}
 WebFontConfig = {
-  google:{families:['Lato:400,700']}
+  google:{families:['Open+Sans:400,600']}
 };
 (function() {
   var wf = document.createElement('script');
@@ -158,8 +198,4 @@ WebFontConfig = {
   var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(wf, s);
 })();
-if(FC$.Page=="Cart" && (FC$.TypeFrt==3 || FC$.TypeFrt==4)){
-  var iValorCesta=<ValorCesta>;
-  fnCustomizeCart();
-}
 </script>
