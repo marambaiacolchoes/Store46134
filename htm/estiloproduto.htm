@@ -1,5 +1,5 @@
 
-<!-- Fastcommerce - EstiloProduto.htm : Grid v1 08.07.2015  (Store 3) -->
+<!-- Fastcommerce - EstiloProduto.htm : Grid v1 08.07.2015  (Xtreme Responsive Store) -->
 <ProdTop>
 <link href="<PathTo file="htm/css/fc_grid_v1.css">" rel="stylesheet" type="text/css">
 <script src="<PathTo file="htm/js/fc_grid_v1.js">"></script>
@@ -61,6 +61,7 @@ var IsFramePage=false;
       if(sPages)sPages.style.display="none";
     }
   });
+
   OffsetAutoPagFC=290;
 </script>
 
@@ -70,18 +71,24 @@ var IsFramePage=false;
 <ProdLista>
 <!-- Prod Lista -->
 <FormProd>
-  <div class="DivListProd col-small-6 col-medium-4 col-large-4 col-xlarge-3" onclick="NoCascate('<URLProd>');" <DataAttribute> id="DivProd<IDProduto>">
-    <div class="DivProductListProd">
-      <div class="DivProductListImagemProd" id="DivImagemProdDouble<IDProduto>"></div>
-      <div class="DivProductList-fastview font-bold" onclick='bCascate=true;FCLib$.OpenRWD("<url-prod-id><IDProduto>&sty=9&int=1","Disp","width=700,height=700")'><a href="<URLProd>" rel="nofollow" onclick="insertURLPreview();">ESPIAR</a></div>
-      <div class="DivProductListNomeProd">
-        <span class="ProductListNomeProd font-regular"><NomeProd></span>
+  <div class="DivListProd col-small-12 col-medium-6 col-large-4 col-xlarge-3" onclick="NoCascate('<URLProd>');" <DataAttribute> id="DivProd<IDProduto>">
+    <!-- Image -->
+      <div class="DivListProdImagemProd" id="DivImagemProdDouble<IDProduto>" onclick="NoCascate('<URLProd>');"></div>
+      <div class="DivIntListProdProd">
+        <div class="DivListProdNomeProd">
+          <!-- Name -->
+          <a href="<URLProd>"><span class="ListProdNomeProd text-overflow font-16"><NomeProd></span></a>
+        </div>
+        <!-- Price -->
+        <div class="DivListProdPriceProd">
+          <div id="idProdPrice<IDProduto>"></div>
+          <div class="PriceAVistaLista" id="ProdDesc<IDProduto>"></div>
+        </div>
+        <!-- FastPreview -->
+        <div class="DivListProdSpy hide-small"><a href="#Spy" rel="nofollow" onclick='bCascate=true;FCLib$.OpenRWD("<url-prod-id><IDProduto>&sty=9&int=1","Disp","width=700,height=700")'>Espiar</a></div>
+        <!-- Details -->
+        <div class="DivListProdDetails"><a href="<URLProd>">Detalhes</a></div>
       </div>
-      <div class="DivProductListPriceProd" style="white-space:nowrap;">
-        <div id="idProdPrice<IDProduto>"></div>
-        <div class="PriceAVistaLista" id="ProdDesc<IDProduto>"></div>
-      </div>
-    </div>
   </div>
 </FormProd>
 <script>
@@ -91,7 +98,6 @@ function fnProd<IDProduto>(){
 };
 if(iPagProdFC==0)FCLib$.onReady(function(){fnProd<IDProduto>();}); else fnProd<IDProduto>();
 </script>
-
 </ProdLista>
 
 <ProdDet>
@@ -103,26 +109,57 @@ if(iPagProdFC==0)FCLib$.onReady(function(){fnProd<IDProduto>();}); else fnProd<I
 <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6">
   <div id="idBreadcrumb">
     <ul>
-      <li><a href="<url-categories>" class="ProductStyleBreadCrumblinkFC">Categoria:</a></li>
+      <li><a href="<url-categories>" class="ProductStyleBreadCrumblinkFC">Departamento:</a></li>
       <li><PathCat></li>
+    </ul>
+  </div>
+</div>
+<!-- End: Breadcrumb -->
+
+<div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6">
+  <div class="SocialProdLinks">
+    <ul class="ProductStyleULFC ProductStyleSocialIcons" id="idShareProd">
+      <li style="white-space:nowrap;"><span><a href="javascript:MostraIndique(<IDLoja>,<IDProduto>)"><img src="<PathTo file="images/iconprodemail.svg">" loading="lazy" width="20" height="20" border="0" alt="E-mail" title="Recomende este produto"></a></span></li>
+      <li><span><ShareFacebook></span></li>
+      <li><span><ShareTwitter></span></li>
+      <li><span><SharePinterest></span></li>
+      <li><span class="ShareWhatsApp show-small"><a href="whatsapp://send?text=Veja o produto '<NomeProd>'. Segue o link: http://lvfc.co/l<IDLojaNum>/p<IDProduto>" target="_blank"><img src="<PathTo file="images/icwhatsapp.svg">" loading="lazy" width="35" height="35" border="0" alt="Recomende este produto pelo WhatsApp" title="Recomende este produto pelo WhatsApp"></a></span></li>
     </ul>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6" id="idDivGridImg">
+  <!--Begin: Imagem Zoom -->
+  <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6" id="idDivGridImg">
     <a href="<ImagemProdAmp>" class="MagicZoomPlus" rel="hint:false;initialize-on: mouseover;"><img src="<ImagemProdDet>" alt="<NomeProd>" onError="MostraImgOnError(this,0)"></a>
   </div>
-  <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6 text-left DivProductDet DivProductDet-mobile">
-    <div><h1 id="idNameProductGridFC"><NomeProd></h1></div>
-    <div class="DivProductDet-sku">Ref: <small id="idCodProdGrid"><CodProd></small>
-      <script type="text/javascript">
-        iQtdOp=<OpiniaoQtd>;
-        if(iQtdOp==0){document.write("<a href='<url-product-review><IDProduto>'><div class='ProductStyleReviewOffBoxFC'><div class='NotaOpiniaoVazio NotaOpiniaoVazio1'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio2'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio3'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio4'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio5'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio6'></div></div></a>")}
-        else {document.write("<a href='<url-product-review><IDProduto>'><div class='ProductStyleReviewOnBoxFC'><div class='ProductStyleReviewStarsOnFC'><OpiniaoMedia></div></a><div class='ProductStyleReviewQtyOnFC'>(<a href='#OP' style='text-decoration:none;'><OpiniaoQtd></a>)</div></div>")}
-      </script>
+  <!--End: Imagem Zoom -->
+
+  <!-- Begin: ProdDet Row -->
+  <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6 text-left">
+    <!-- Begin: Release - Product Name - Cod - Reviews -->
+    <div class="ProductStyleBoxFC">
+      <ul class="ProductStyleULFC">
+        <li><h1 class="font-22" id="idNameProductGridFC"><NomeProd></h1></li>
+        <li>
+          <span class="prod-info">Ref:<small id="idCodProdGrid"><CodProd></small> |</span>
+          <span class="prod-info">Categoria: <NomeCat></span>
+          <span class="releaseProd"><lancamento></span>
+        </li>
+        <li class="text-left ProdRating">
+          <script type="text/javascript">
+            iQtdOp=<OpiniaoQtd>;
+            if(iQtdOp==0){document.write("<div class='ProductStyleReviewOffBoxFC'><div class='NotaOpiniaoVazio NotaOpiniaoVazio1'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio2'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio3'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio4'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio5'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio6'></div></div>")}
+            else {document.write("<div class='ProductStyleReviewOnBoxFC'><div class='ProductStyleReviewStarsOnFC'><OpiniaoMedia></div><div class='ProductStyleReviewQtyOnFC'>(<a href='#OP' style='text-decoration:none;'><OpiniaoQtd></a>)</div></div>")}
+          </script>
+        </li>
+        <li class="ProdRating font-14"><a href="<url-product-review><IDProduto>">Avalie este produto</a></li>
+      </ul>
     </div>
-    <div>
+    <!-- End: Release - Product Name - Cod - Reviews -->
+
+    <!-- Begin: Price Grid -->
+    <div class="ProductStyleBoxFC">
       <p class="prod-price" id="idPriceGridFC<IDProduto>">
         <PrecoSimples>
       </p>
@@ -136,72 +173,73 @@ if(iPagProdFC==0)FCLib$.onReady(function(){fnProd<IDProduto>();}); else fnProd<I
     <p id="idPriceAVista">
       <script>FCLib$.onReady(function(){sF$.fnMostraDescontoProdDet(<PrecoNum>);});</script>
     </p>
+    <!-- End: Price Grid -->
+
+    <!-- Begin: Grid Content -->
     <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 FCGridMain" id="idMainGridFC_<IDProduto>"></div>
-    <div class="ProductStyleBoxFC FreightContainerFC col-small-12 col-medium-12 col-large-12 col-xlarge-12">
-      <div id="ShowCEP<IDProduto>"></div>
-    </div>
+    <!-- End: Grid Content -->
+
+    <!-- Begin: Small Description -->
     <div class="ProductStyleBoxFC">
-      <div class="SocialProdLinks">
-        <ul class="ProductStyleULFC ProductStyleSocialIcons" id="idShareProd">
-          <li style="white-space:nowrap;"><span><a href="javascript:MostraIndique(<IDLoja>,<IDProduto>)"><img src="<PathTo file="images/iconprodemail.svg">" loading="lazy" width="20" height="20" border="0" alt="E-mail" title="Recomende este produto"></a></span></li>
-          <li><span><ShareFacebook></span></li>
-          <li><span><ShareTwitter></span></li>
-          <li><span><SharePinterest></span></li>
-          <li><span class="ShareWhatsApp show-small"><a href="whatsapp://send?text=Veja o produto '<NomeProd>'. Segue o link: http://lvfc.co/l<IDLojaNum>/p<IDProduto>" target="_blank"><img src="<PathTo file="images/icwhatsapp.svg">" loading="lazy" width="35" height="35" border="0" alt="Recomende este produto pelo WhatsApp" title="Recomende este produto pelo WhatsApp"></a></span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="ProductStyleBoxFC">
+      <ProdFilters>
       <ul class="ProductStyleULFC">
         <li><p class="DescrLineHeight"><DescricaoCurta></p></li>
-        <li><ProdFilters></li>
         <li class="text-right"><a class="link-descr" href="#">Saiba mais! <span><img64 src="<BaseLoja>images/iconkreading.svg" plain="true" width="25" height="25" ></span></a></li>
       </ul>
     </div>
-  </div>
-</div>
+    <!-- End: Small Description -->
 
-<!-- Begin: Cross Selling - Description - Video - BarCode - Comments -->
-<div class="MainContainer">
-  <div class="row">
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left">
-      <BuyTogether>
+    <!-- Begin: ZipCode Grid -->
+    <div class="ProductStyleBoxFC FreightContainerFC col-small-12 col-medium-12 col-large-8 col-xlarge-5">
+      <div id="ShowCEP<IDProduto>"></div>
     </div>
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 CrossSellingFC">
-      <CrossSelling>
-    </div>
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
-      <hr>
-    </div>
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left descr-prod">
-      <div class="ProductStyleBoxDescriptionFC">
-       <h2>Descrição:</h2>
+    <!-- End: ZipCode Grid -->
+  </div>
+
+</div>
+<!-- End: ProdDet Row -->
+
+  <!-- Begin: Cross Selling - Description - Video - BarCode - Comments -->
+  <div class="MainContainer">
+    <div class="row">
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+        <hr>
       </div>
-      <div class="ProductStyleBoxDescriptionFC">
-       <Descricao>
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 CrossSellingFC">
+        <CrossSelling>
       </div>
-      <div class="ProductStyleBoxDescriptionFC">
-       <DescrHTM>
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+        <hr>
       </div>
-      <div class="ProductStyleBoxDescriptionFC">
-       <div class="fc-productdet-more-information"><DescrURL></div>
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left descr-prod">
+        <div class="ProductStyleBoxDescriptionFC">
+         <h2>Descrição:</h2>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <Descricao>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <DescrHTM>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <DescrURL>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <VideoProd>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <BarCode>
+        </div>
+        <div class="ProductStyleBoxDescriptionFC">
+         <Comments>
+        </div>
       </div>
-      <div class="ProductStyleBoxDescriptionFC">
-       <VideoProd>
+      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+        <hr>
       </div>
-      <div class="ProductStyleBoxDescriptionFC">
-       <BarCode>
-      </div>
-      <div class="ProductStyleBoxDescriptionFC">
-       <Comments>
-      </div>
-    </div>
-    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
-      <hr>
     </div>
   </div>
-</div>
-<!-- End: Cross Selling - Description - Video - BarCode - Comments -->
+  <!-- End: Cross Selling - Description - Video - BarCode - Comments -->
 
 <!-- Javascript ZipCode - Description CrossSelling -->
 <script>
@@ -273,4 +311,4 @@ var GridLib_<IDProduto>$=(function(){
 
 <ProdAmp><!-- Prod Amp --></ProdAmp>
 <ProdBottom></ProdBottom>
-<!-- Fastcommerce - EstiloProduto.htm : Grid v1 08.07.2015  (Store 3) -->
+<!-- Fastcommerce - EstiloProduto.htm : Grid v1 08.07.2015  (Xtreme Responsive Store) -->
