@@ -153,7 +153,7 @@ ul.FilItemsList li label{top:-3px;}
 
 #idLocalFC .EstNomeCampo,#idPBairroFC .EstNomeCampo,#idPCEPFC .EstNomeCampo,#idPCidadeFC .EstNomeCampo,#idPEmailFC .EstNomeCampo,#idPEnderecoFC .EstNomeCampo,#idPEstadoFC .EstNomeCampo,#idPPaisFC .EstNomeCampo,#idPTelefoneFC .EstNomeCampo,#idParaFC .EstNomeCampo,#idTablePCEPFC .EstNomeCampo,#idtrPEnderecoComplFC .EstNomeCampo,#idtrPEnderecoNumFC .EstNomeCampo{color:#ff0000}
 
-/* Style CADASTRO DE CLIENTES, AJUDA, CONFIRMAÇÃO DO PEDIDO */
+/* Style CADASTRO DE CLIENTES, AJUDA, CONFIRMAï¿½ï¿½O DO PEDIDO */
 .EstTabTopo{padding:5px 2px 5px 2px;font-size:12px;font-weight:bold}
 .FCRegister .EstTabTopo{padding:10px 0 10px 0;font-size:16px;background:#dedede}
 .FCRegister #idTabRequiredFieldFC{display:none}
@@ -164,10 +164,10 @@ ul.FilItemsList li label{top:-3px;}
 .FCRegister #idTabRegisterFC td{padding:5px 0}
 #idCalendNascFC img{margin:0 3px}
 
-/* Style para a tabela de Busca Rápida, para tabela de Ajuda (Pagamentos) e Fale Conosco */
+/* Style para a tabela de Busca Rï¿½pida, para tabela de Ajuda (Pagamentos) e Fale Conosco */
 .EstTabQuadro{font-size:8pt;background:#FFFFFF}
 
-/* Style dos campos do formulário clientes,fale conosco,... */
+/* Style dos campos do formulï¿½rio clientes,fale conosco,... */
 .EstNomeCampo{font-size:8pt;font-weight:bold;color:#000000}
 .EstCampo{font-size:8pt}
 #idTabRegisterFC .EstNomeCampo{width:250px}
@@ -192,7 +192,7 @@ ul.FilItemsList li label{top:-3px;}
 .HeaderMenuOneFC ul li a{font-family:'Open Sans',verdana,arial;font-weight:400}
 #DivSearch{width:100%}
 #SearchText{width:72%;float:left}
-.InputTextBusca{width:100%;height:35px;border-style:none;padding:0 0 0 10px !important;border:0 solid #ff0000}
+.InputTextBusca{width:100%;height:35px;border-style:none;padding:0 0 0 10px !important;border:0 solid #ff0000;border-radius: 30px;}
 .HeaderSearchIconFC{display:table;width:51px;height:35px;text-align:center}
 .HeaderSerachIMGIconFC{position:relative;top:4px}
 .btn1{text-align:center;padding:11px 23px 6px 23px;font-size:15px;border:0;text-transform:capitalize;outline:none;cursor:pointer;text-decoration:none;color:#333333;box-shadow:0 0 5px 0 #cccccc}
@@ -549,13 +549,13 @@ ul{-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit
 .text-overflow{box-sizing:border-box;display:block;display:-webkit-box;max-width:400px;min-height:35px;margin:0 auto;line-height:18px;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}
 .center-col{margin:0 auto;float:none !important;display:block}
 
-/* Button Ped Confirmação */
+/* Button Ped Confirmaï¿½ï¿½o */
 .BotConfPed {border-width:1px;font-weight:bold;font-size:14px;font-family:verdana;height:40px;width:300px;background:green;color:#fcfcfc;border-color:#333333}
 .EstTextoContinuar{font-size:12pt;font-weight:bold;color:green;font-family:tahoma,verdana,arial;color:green}
 .BotContinuarConfirmacao{background-color:#6ea853;font-weight:bold;font-family:verdana;border:none;padding:7px 15px 7px 15px;color:#ffffff;cursor:pointer;-webkit-border-radius:3px;min-height:47px;transition:background-color 0.5s background-color:#44ac55;font-size:14px}
 .BotContinuar{font-size:12pt;font-weight:bold}
 
-/* Estilos dos retornos de transação */
+/* Estilos dos retornos de transaï¿½ï¿½o */
 .StyTransactionID{color:#355590}
 .StyTransactionUnderReview{color:#f47900;text-transform:uppercase}
 .StyTransactionApproved{color:#06b545;text-transform:uppercase}
@@ -659,7 +659,7 @@ table[name="TabEnvioInt"] td{vertical-align:middle;padding:5px 5px}
 @media only screen and (max-width:1680px){.DontGoPopupContent{width:48%}}
 @media only screen and (min-width:1681px){.DontGoPopupContent{width:40%}}
 
-/* Cálculo de frete no carrinho */
+/* Cï¿½lculo de frete no carrinho */
 .FCCartRightCol{display:none}
 .FCCartLeftCol{width:100%}
 .ObsFreightCalc{font-size:11px}
@@ -1090,7 +1090,7 @@ span .FooterNewsletterInput{height:38px;font-size:14px;padding:0 0 0 10px;width:
 [class*='gridLevel']{clear:both;width:100%;height:100%;padding:10px 5px !important;box-sizing:border-box;text-align:center;background:transparent;border:1px solid #ccc;margin:10px 0 !important;border:1px solid #cccccc}
 [class*='descriChoice']{clear:both;width:100%;float:left;text-align:left;box-sizing:border-box;padding:0 0 10px 10px;font-family:'Open Sans',verdana,arial;font-weight:600}
 
-/* Remove quadrado do campo obrigatório */
+/* Remove quadrado do campo obrigatï¿½rio */
 .EstDivRequired{display:none}
 
 /* Alteracoes no Vex */
