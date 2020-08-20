@@ -171,15 +171,15 @@ var FCGrid$ = function () {
     magicZoomFC: function(id, novoArray, novoArrayAmp, FC_MaxImages, refreshZoom){
 
       var imgDetMini="", imgAmpMini="", sHtmlZoom="";
-      var sNameProd = fn.getNameProduct();
       for (var i=0;i<=FC_MaxImages;i++)
       {
         if(i===0)
         {
           imgDetMini=novoArray[i];
           imgAmpMini=novoArrayAmp[i];
-          sHtmlZoom+="<div class='fc-DivGridImg-Big'><a href="+imgAmpMini+" class=MagicZoomPlus id=zoom2 rel=\"selectors-class:active; zoom-width:350px; zoom-height:350px; selectors-change:mouseover;\"><img src="+ imgDetMini +" alt='"+sNameProd+"'></a></div>"
-                    +"<div class='fc-DivGridImg-Small1'><a href=\""+imgAmpMini+"\"  rel=\"zoom-id:zoom2;\" rev=\""+ imgDetMini +"\"><img src=\""+ imgDetMini +"\" alt='"+sNameProd+"' width=65 height=65 class=ZoomIMG2></a></div>";
+          sHtmlZoom+="<a href="+imgAmpMini+" title=\""+ fn.getNameProduct() +"\" class=MagicZoomPlus id=zoom2 rel=\"selectors-class:active; zoom-width:350px; zoom-height:350px; selectors-change:mouseover;\"><img src="+ imgDetMini +"></a><br>"
+                    +"<p><a class=\"FCGridBtnZoom\" onclick=\"MagicZoomPlus.expand(zoom2); return false;\" href=\"#\">Ampliar imagem</a></p>"
+                    +"<a href=\""+imgAmpMini+"\"  rel=\"zoom-id:zoom2;\" rev=\""+ imgDetMini +"\"><img src=\""+ imgDetMini +"\" width=65 height=65 class=ZoomIMG2></a>";
         }
         else{
 
@@ -190,16 +190,11 @@ var FCGrid$ = function () {
             imgDetMini=FC$.PathPrd+novoArray[i];
             imgAmpMini=FC$.PathPrd+novoArrayAmp[i];
           }
-          sHtmlZoom+="<div class='fc-DivGridImg-Small2'><a href="+imgAmpMini+" rel='zoom-id:zoom2;' rev="+ imgDetMini +"><img src="+ imgDetMini +" alt='"+sNameProd+"' width=65 height=65 class=ZoomIMG2></a></div>";
+          sHtmlZoom+="<a href="+imgAmpMini+" rel='zoom-id:zoom2;' rev="+ imgDetMini +"><img src="+ imgDetMini +" width=65 height=65 class=ZoomIMG2></a>";
         }
       }
       document.getElementById(id).innerHTML=sHtmlZoom;
-
-      setTimeout(function(){
-        var mgZoomId = document.querySelector('#zoom2');
-        mgZoomId.setAttribute('title',sNameProd);
-        if(refreshZoom)MagicZoomPlus.refresh();
-      },700);
+      if(refreshZoom)MagicZoomPlus.refresh();
     },
 
     imgView: function(srcImgDet, srcImgAmp, refreshZoom){
@@ -269,19 +264,22 @@ var FCGrid$ = function () {
     },
 
     setPriceProduct: function(product){
-
       var oPositionPrice=document.getElementById("idPriceGridFC"+ product.IDProdutoPai);
+
       if(parseFloat(product.priceNum) > 0 && oPositionPrice){
         var oMaxInstallments = fnMaxInstallmentsGrid(product.priceNum, product.maxInstallmentsNum);
         var oEconomyJS = (typeof fnShowEconomyGrid == 'function') ?  fnShowEconomyGrid(product.priceNum, product.priceOri) : "";
+
         var oPositionTableDiscount = document.getElementById("idPriceAVista"+ product.IDProduto);
         if (iDescontoAvista && oPositionTableDiscount) { // verifica se existe desconto a vista e sua tabela para apresenta-lo
           if (product.priceNum > 0 || iDescontoAvista > 0) {
             oPositionTableDiscount.innerHTML = "<div class='PriceAVistaProdLista'><p>Para pagamentos à vista ganhe <b>" + iDescontoAvista + "% de desconto</b>.</p><p>Valor com desconto <b>" + FormatPrice(product.priceNum * ((100 - iDescontoAvista) / 100), FC$.Currency) + "</b></p></div>";
           }
         }
+        
         sF$.fnMostraDescontoProdDet(product.priceNum);
         if(product.priceNum!=product.priceOri){
+
            return oPositionPrice.innerHTML="<span class=oldPrice style=\"text-decoration: line-through;\">"+FCLib$.FormatPreco(FormatPrice(product.priceOri,FC$.Currency))+"</span> <b>"+FCLib$.FormatPreco(FormatPrice(product.priceNum,FC$.Currency))+"</b> " + oMaxInstallments + oEconomyJS;
          }
          else{
@@ -291,7 +289,6 @@ var FCGrid$ = function () {
         document.getElementById("idPriceAVista").innerHTML="";
         return oPositionPrice.innerHTML="Preço sob consulta";
        }
-
     },
 
     setCodeProduct: function(){
@@ -1090,7 +1087,6 @@ var FCGrid$ = function () {
     }else{
       aSettingsAll.push(JSON.stringify(settings));
       fnInitProductOnlyOne(aProductOnlyOneGrid,iGridQtd);
-
     }
   }
 
