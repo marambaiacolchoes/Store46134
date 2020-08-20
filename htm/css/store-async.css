@@ -1,22 +1,52 @@
-/* Fastcommerce - Store 3 Async - 2018 (v1) */
+/* Fastcommerce - Xtreme Responsive Store Async - Agosto/2018 (v6) */
 
-#ContentFil .DivFiltrandoPor .Label{background:<tag-FCCSSSecondMainColor>}
-#ContentFil .DivFiltrarPor .Label{background:<tag-FCCSSSecondMainColor>}
-.HeaderCartItensPosition .HeaderCartNumberProds{background-color:<tag-FCCSSSecondMainColor>}
-.header-sidenav{background-color:<tag-FCCSSMainColor>}
-.header-sidenav-link{border-bottom:1px solid <tag-FCCSSSecondMainColor>}
+#ContentFil .DivFiltrandoPor .Label{background:<tag-FCCSSMainColor>}
+#ContentFil .DivFiltrarPor .Label{background:<tag-FCCSSMainColor>}
+#ContentFil .SetaDireita:before{border-left:5px solid <tag-FCCSSMainColor>}
+.FreightTxtOnlyBR{background:<tag-FCCSSMainColor>}
+.HeaderMenuOneFC ul li a{color:<tag-FCCSSMainColor>}
+.HeaderMainMenuFC{background:none repeat scroll 0 0 <tag-FCCSSMainColor>;border-bottom:2px solid <tag-FCCSSSecondMainColor>}
+.HeaderMenuULFC a:hover li{background:<tag-FCCSSSecondMainColor>}
+.HeaderCartMainFC path, .HeaderCartMainFC circle{fill:<tag-FCCSSSecondMainColor>}
+.HeaderCartMainFC:hover path, .HeaderCartMainFC:hover circle{fill:<tag-FCCSSMainColor>}
+.btn-sent{background:none repeat scroll 0 0 <tag-FCCSSSecondMainColor> !important}
+a #HeaderCartItemFC{color:<tag-FCCSSSecondMainColor>}
+.HeaderMenuOneFC .header-menu-shopping-list svg path,.HeaderMenuOneFC .header-menu-wishlist svg #heart-wishlist-border{fill:<tag-FCCSSMainColor>!important}
+.HeaderMenuToolbarFC{color:<tag-FCCSSSecondMainColor> !important}
+.autocomplete strong{color:<tag-FCCSSMainColor>}
+.FCToolBarChatTel a svg path{fill:<tag-FCCSSSecondMainColor>}
+.HeaderMenuCatDepFC svg path{fill:<tag-FCCSSSecondMainColor>}
+.MainHomeBoxTitFC{border-bottom:1px solid <tag-FCCSSSecondMainColor>;color:<tag-FCCSSMainColor>}
+.DivHomeProd:hover{box-shadow:0 0 5px 0 #cccccc, 0 3px 0 <tag-FCCSSSecondMainColor>}
+.DivHomeNomeProd{color:<tag-FCCSSMainColor>}
+.DivHomeSpy a{border:0 solid <tag-FCCSSMainColor>}
+.DivHomeDetails a{border:0 solid <tag-FCCSSMainColor>;color:<tag-FCCSSMainColor>}
+.DivHomeDetails a:hover{background-color:<tag-FCCSSMainColor>}
+.HomeNomeProd{color:<tag-FCCSSMainColor>}
+.ProductStyleULFC h1{color:<tag-FCCSSMainColor>}
+.DivListProd:hover{box-shadow:0 0 5px 0 #cccccc, 0 3px 0 <tag-FCCSSSecondMainColor>}
+.DivListProdNomeProd{color:<tag-FCCSSMainColor>}
+.DivListProdProd:hover{box-shadow:0 0 5px 0 #cccccc, 0 3px 0 <tag-FCCSSMainColor>}
+.DivListProdSpy a{border:0 solid <tag-FCCSSMainColor>}
+.DivListProdDetails a{border:0 solid <tag-FCCSSMainColor>;color:<tag-FCCSSMainColor>}
+.DivListProdDetails a:hover{background-color:<tag-FCCSSMainColor>}
+.ListProdNomeProd{color:<tag-FCCSSMainColor>}
 .prod-info .EstNomeCat{color:<tag-FCCSSSecondMainColor>}
-.ProductDet .fc-productdet-more-information a{background:<tag-FCCSSSecondMainColor>}
-.ProductDet #idEstNoCommentsClickProdOpFC a{background:<tag-FCCSSSecondMainColor>}
-.ProductDet #idCommentsClickFC a{background:<tag-FCCSSSecondMainColor>}
-.header-sidenav .EstListCat li{border-bottom:1px solid <tag-FCCSSSecondMainColor>}
+.EstPathCatLink:hover{color:<tag-FCCSSMainColor>}
+#idTxtRemoveFilters a{background-color:<tag-FCCSSMainColor>;border:0 solid <tag-FCCSSMainColor>}
+.CatSeeMoreFC{background:<tag-FCCSSSecondMainColor>}
+.activeCat{background:<tag-FCCSSMainColor>}
+.FCNews .StyTitNews a:hover{color:<tag-FCCSSMainColor>}
 .FCError404h1{color:<tag-FCCSSSecondMainColor>}
 .fc-badge-product-sale{background-color:<tag-FCCSSMainColor>}
-.footer-newsletter-submit-button{background:<tag-FCCSSSecondMainColor>}
+.FootterMainBarFC .row .title-footer{color:<tag-FCCSSSecondMainColor>}
 .FooterTitleTxt{color:<tag-FCCSSSecondMainColor>}
+#idPageHistory{color:<tag-FCCSSMainColor>}
+#idTitProdCrossFC{color:<tag-FCCSSMainColor>;color:<tag-FCCSSMainColor>}
+#EstCommentsTxt{color:<tag-FCCSSMainColor>}
 #idListProdCrossFC li .EstCatProdCross .EstCatNameProdCross{color:<tag-FCCSSSecondMainColor>}
-.activeCat{background:<tag-FCCSSSecondMainColor>}
-.CatSeeMoreFC{background:<tag-FCCSSSecondMainColor>}
-@media only screen and (min-width:1025px){
-  #FC-ScrollBackTopThetop{background-color:<tag-FCCSSMainColor>}
+.FooterInfosContainer a:hover path, .FooterInfosContainer a:hover rect, .FooterInfosContainer a:hover circle{fill:<tag-FCCSSMainColor>}
+
+@media only screen and (max-width:640px){
+  .tinynav{color:<tag-FCCSSSecondMainColor>}
 }
