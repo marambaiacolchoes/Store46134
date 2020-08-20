@@ -1,25 +1,40 @@
 /* Global */
-.Testecolor{<tag-FCCSS-COlorTest1>}
 
 /* Estilos personalizados */
 .EstPassoCompraDiv{display:none}
 .EstContinuarComprando{display:none;}
 #TabBancos{display:none;}
-.PedLinkRodape{color:#004a8a;text-decoration:underline;}
+.PedLinkRodape{color:004a8a;text-decoration:underline}
 .SecurityLogos img{margin:20px 5px;float:left;}
 .SecurityLogos svg{margin:15px 5px;float:left;}
-.SecurityLogos{margin:0 auto;display:table;font-weight:bold;}
-.SecurityLogos b{font-weight:bold;margin:0 0 0 -80px;}
-.header-ped-line{width:100%;height:8px;background:#f9f9f9;margin-bottom:50px;}
+.SecurityLogos{margin:0px auto;display:table;font-weight:bold;}
+.SecurityLogos b{font-weight:bold;margin:0px 0px 0px -80px}
+
+/* Menu */
+.SpecialPedMenuULFC{list-style-type:none;font-family:'Open Sans',verdana,arial;font-weight:400;}
+.SpecialPedMenuULFC li{display:inline;margin:0px 0px 0px 0px;font-size:12px;}
+.SpecialPedMenuULFC li a{text-decoration:none;padding:13px 10px 13px 10px;}
+.SpecialPedMenuULFC li a:hover{background:#ededed;color:#2d2d2d;}
+
+/* Header */
+.HeaderLogo{max-width:100%;max-height:100%;}
+.HeaderPedBTCompanyTxtFC{font-family:'Open Sans',verdana,arial;font-weight:400;font-size:20px;}
+.HeaderPedSepLineFC{background-color:<tag-FCCSSMainColor>;width:100%;margin:10px 0px 50px 0px;height:20px;}
+.SpecialPedMenuPositionULFC{position:relative;top:15px;}
+.HeaderLinkPositionMenuFC{position:relative;top:45px;}
+.HeaderPhonePositionMenuFC{position:relative;top:35px;color:#727272;}
+.HeaderHomePositionMenuFC a{position:relative;top:39px;color:#727272;}
+.HeaderPedHomeIconFC{position:relative;}
+.HeaderPedHomeIconFC svg{fill:#727272;}
+.HeaderPedPhoneIconFC {position:relative;top:2px;}
+.HeaderPedPhoneIconFC svg path{fill:#727272;}
 
 /* Footer */
-.FooterPedPositionFC{bottom:0;width:100%;}
-.FCCheckout .pwdEye{position:relative;top:6px;}
-#idTableSenhaFC .pwdEye{position:relative;top:11px;display:block;}
+.FooterPedPositionFC{bottom:0px;width:100%;}
+.FooterPedAddFastCommerce{font-family:'Open Sans',verdana,arial;font-weight:400;font-size:12px;}
+.FooterPedPositionFC .row .SecurityLogos b{position:relative;left:-80px;}
 
 /*Media Queries*/
 @media only screen and (max-width:640px) { 
-  .HeaderPhonePositionMenuFC{position:relative;top:0;}
-  .header-ped-line{margin-bottom:10px;}
-  #idTableSenhaFC .pwdEye{display:none;}
+  .HeaderPhonePositionMenuFC{position:relative;top:0px;}
 }
