@@ -1,0 +1,91 @@
+
+/* Filtros */
+
+
+.ParentFiltrarPor{
+  display:flex;
+  flex-flow:column wrap;
+  justify-content:flex-start;
+}
+
+.ChildFiltrarPor{
+  margin:10px 10px 0 0;
+  border:1px solid #dedede;
+  border-radius:4px;
+  padding:5px;
+  background:#fff;
+}
+
+#ContentFil {border:1px solid #cecece;width:90%;border-radius:4px;background:#fcfcfc;margin-bottom:20px;padding-bottom:15px;margin-left:15px;}
+
+#ContentFil .DivFiltrandoPor {padding:10px 0 0 10px;}
+#ContentFil .DivFiltrandoPor .Label{font-weight:bold;font-family:arial;font-size:16px;background:#ebebeb;width:95%;display:block;padding:7px 0 7px 7px;color:#555555;border-radius:3px;}
+
+#ContentFil .DivFiltrarPor {padding:25px 0 0 10px;}
+#ContentFil .DivFiltrarPor .Label{font-weight:bold;font-family:arial;font-size:16px;background:#ebebeb;width:95%;display:block;padding:7px 0 7px 7px;color:#555555;border-radius:3px;}
+
+#ContentFil .FilSearch{padding:5px 0 0 5px;margin:0;list-style-type:none;}
+#ContentFil .FilSearch .FilName{margin:5px 0 5px 0;font-weight:bold;font-family:arial;font-size:16px;cursor:pointer;color:#666666}
+#ContentFil .FilSearch .FilName img{padding:0 4px 0 0;cursor:pointer;width:16px;height:16px;}
+#ContentFil .FilItems .FilItemsList{width:95%;padding:0;margin:0;list-style-type:none;max-height: 120px;overflow-x: auto;overflow-y: auto;}
+#ContentFil .FilItems .FilItemsList::-webkit-scrollbar{-webkit-appearance:none;width:7px;}
+#ContentFil .FilItems .FilItemsList::-webkit-scrollbar-thumb{border-radius:4px;background-color:#666;-webkit-box-shadow:0 0 1px;}
+#ContentFil .FilSearch .SearchFil{margin:3px 0 10px 0;border: 1px solid #cecece;width:220px;height:34px;font-size:15px;padding:0 0 0 5px;}
+#ContentFil #idFilSearchTextInputFC{border: 1px solid #cecece;width:190px;height:34px;padding:3px;font-size:15px;}
+#ContentFil .FilItems .FilItemsList li {line-height:26px;}
+#ContentFil .FilItems .FilItemsList label{font-size:14px;cursor:pointer;}
+#ContentFil .FilItems .FilItemsList li input[type=checkbox] {margin:4px 5px 2px 0;cursor:pointer;}
+#ContentFil .FilItems .FilItemsList li input[type=radio] {margin:4px 5px 2px 0;cursor:pointer;}
+#ContentFil .FilItems .FilItemsList .ColorSearch{color:#64AED9;}
+
+#ContentFil .SearchTextFil{text-decoration:underline;font-weight:bold;color:#2a97e3;}
+#ContentFil .SearchItem{font-weight:bold;}
+
+#ContentFil .ImageFil{margin:0 3px 0 0;width:16px;height:16px;border-radius:8px;line-height:8px;display:inline-block;vertical-align:bottom;border: 1px solid #dedede;position:relative;top:-6px;}
+#ContentFil .ColorFil{margin:0 3px 5px 0;width:16px;height:16px;border-radius:8px;line-height:8px;display:inline-block;vertical-align:bottom;border: 1px solid #dedede;}
+
+#ContentFil .FilNotFound{font-size:15px;}
+
+#ContentFil .FiltrandoPor{padding:5px 0 15px 5px;margin:0;list-style-type:none}
+#ContentFil .FiltrandoPor li{margin-top:10px;font-size:15px;}
+#ContentFil .FiltrandoPor img{width:24px;cursor:pointer;margin-left:3px;}
+
+#idFilSearchOKFC {position:absolute;margin-left:5px;}
+#idFilSearchOKFC img{width:34px !important;}
+#idFilSearchCancelFC {position:absolute;margin-left:43px;margin-top:5px;}
+
+#ContentFil .FilList{width:30px}
+
+#ContentFil .FilRemoveFilters{margin-top:25px;}
+#ContentFil .FilRemoveFilters a{background-color:#dedede;color:#555555;border-radius:3px;font-weight:bold;font-size: 15px;padding: 6px 10px 6px 10px;text-decoration:none;}
+#ContentFil .FilRemoveFilters a:hover{background-color:#990000;color:#fcfcfc;}
+
+#ContentFil .FilMoreOptionsSearch{margin-top:25px;}
+#ContentFil .FilMoreOptionsSearch a{background-color:#dedede;color:#555555;border-radius:3px;font-weight:bold;font-size: 15px;padding: 6px 10px 6px 10px;text-decoration:none;}
+#ContentFil .FilMoreOptionsSearch a:hover{background-color:#5C9E0D;color:#fcfcfc;}
+
+#ContentFil .SetaDireita:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  margin-bottom: 3px;
+  width: 0; 
+  height: 0; 
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #867565;
+}
+
+#ContentFil .SetaBaixo:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 3px;
+  margin-bottom: 5px;
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #555555;
+}
