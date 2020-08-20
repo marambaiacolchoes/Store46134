@@ -1,42 +1,31 @@
 <IncludeTagged src="css/order-store-style.css" async>
 <!-- Begin: PedFooter -->
 <div class="FooterPedPositionFC">
-  <!-- Company -->
-  <div class="footer-company">
-    <div class="MainContainer">
-      <div class="row footer-space-lines">
-        <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-center">
-          <div class="footer-company-data font-regular"><CompanyName>. CNPJ <CompanyDocument> <br><span class="footer-company-address-spacing"><CompanyAddress></span></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-center">
-        <a href="<url-help>?#Seguranca"><img src="/images/100_https.svg?cccfc=1" loading="lazy" height="50" alt="Seu pedido com Segurança" title="Site Seguro"></a>
-        <a href="https://www.google.com/transparencyreport/safebrowsing/diagnostic/?hl=pt-BR#url=<StoreDomain>" target="_blank" rel="noopener"><img src="/images/Google_Loja_Segura.svg?cccfc=1" loading="lazy" height="50" alt="Seu pedido com Segurança" title="Site Seguro"></a>
-        <a href="https://www.fastcommerce.com.br/security-badge.ehc?url=<StoreDomain>" target="_blank" rel="noopener"><img src="/security-badge.ehc" loading="lazy" width="163" height="50" alt="Safe Site" title="Safe Site"></a>
-        </div>
-      </div>
+  <div class="row">
+    <div class="SecurityLogos">
+      <b>Segurança</b>
+      <a href="<url-help>?#Seguranca"><img src="/images/100_https.svg?cccfc=1" loading="lazy" height="50" alt="Seu pedido com Segurança" title="Site Seguro"></a><a href="https://www.google.com/transparencyreport/safebrowsing/diagnostic/?hl=pt-BR#url=<StoreDomain>" target=_blank><img src="/images/Google_Loja_Segura.svg?cccfc=1" loading="lazy" height="50" alt="Seu pedido com Segurança" title="Site Seguro"></a>&nbsp;&nbsp;<a href="https://www.fastcommerce.com.br/security-badge.ehc?url=<StoreDomain>" target="_blank" rel="noopener"><img src="/security-badge.ehc" loading="lazy" width="163" height="50" alt="Safe Site" title="Safe Site"></a>
     </div>
   </div>
-  <!-- Copyright -->
+  <!-- Begin: Technology - Copyright -->
   <div class="FooterTecBoxFC">
     <div class="MainContainer FooterTecHeightFC">
       <div class="row">
         <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6 text-left text-small-center">
-         <p class="FooterTecFastcommerce font-regular"><a href="https://www.fastcommerce.com.br/?origem=tecfc&utm_source=Lojas+Fastcommerce&utm_medium=Selo&utm_campaign=Tecnologia+Fastcommerce" target="_blank" rel="noopener">Tecnologia de comércio eletrônico <strong>Fastcommerce</strong></a></p>
+          <p class="FooterTecFastCommerce"><a href="https://www.fastcommerce.com.br/?origem=tecfc&utm_source=Lojas+Fastcommerce&utm_medium=Selo&utm_campaign=Tecnologia+Fastcommerce" target="_blank">Tecnologia de comércio eletrônico <strong>Fastcommerce</strong></a></p>
         </div>
-        <div class="col-small-12 col-medium-5 col-large-5 col-xlarge-5 text-right text-small-center">
-         <p class="FooterTecFastcommerce font-regular" >Copyright © <span id="FooterFullYear"></span> <strong><NomeLoja></strong></p>
+        <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6 text-right text-small-center">
+          <p class="FooterTecFastCommerce">Copyright © <span id="FooterFullYear"></span> <strong><NomeLoja></strong></p>
+          <p class="FooterPedAddFastCommerce"><CompanyName> &middot; <span style="white-space:nowrap;">CNPJ: <CompanyDocument></span></p>
         </div>
-        <div class="col-small-12 col-medium-1 col-large-1 col-xlarge-1 text-right text-small-center"></div>
       </div>
     </div>
   </div>
+  <!-- End: Technology - Copyright -->
 </div>
-<script>
-fnFooterPed();
+<script>fnFooterPed();
 WebFontConfig = {
-  google:{families:['Lato:400,700']}
+  google:{families:['Open+Sans:400,600']}
 };
 (function() {
   var wf = document.createElement('script');
@@ -45,5 +34,7 @@ WebFontConfig = {
   wf.async = 'true';
   var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(wf, s);
-})(); 
+})();
 </script>
+
+<!-- End: PedFooter -->
