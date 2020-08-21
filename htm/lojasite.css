@@ -217,7 +217,7 @@ a #HeaderCartTotalFC{position:relative;top:3px;font-size:15px;font-family:'Open 
 .HeaderMenuOneFC .header-menu-wishlist a:hover svg #heart-wishlist-border{fill:transparent!important}
 .speech .header-speech-icon{display:none}
 
-/*Searchbar Bootstrap*/
+/*Searchbar Bootstrap
 #custom-search-input{
   padding: 3px;
   border: solid 1px #E4E4E4;
@@ -248,7 +248,7 @@ a #HeaderCartTotalFC{position:relative;top:3px;font-size:15px;font-family:'Open 
 
 #custom-search-input .glyphicon-search{
   font-size: 23px;
-}
+}*/
 
 /* Menu slidedown em small */
 .SmallMenuContainer{display:none}
