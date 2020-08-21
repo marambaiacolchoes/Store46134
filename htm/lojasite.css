@@ -319,7 +319,7 @@ a #HeaderCartTotalFC{position:relative;top:3px;font-size:15px;font-family:'Open 
 .DivHomeProd{cursor:pointer !important;width:100%;margin-top:10px;margin-bottom:10px;padding:1em;display:inline-block;box-sizing:border-box;border-top-style:solid;border-top-width:1px;border-left-style:solid;border-left-width:1px;border-right-style:solid;border-right-width:2px;border-bottom-style:solid;border-bottom-width:3px;border:1px solid #FFFFFF;border-top-color:#FFFFFF;border-left-color:#FFFFFF;border-right-color:#FFFFFF;border-bottom-color:#FFFFFF}
 .DivHomeProd:hover{border-radius:5px}
 .DivHomeImagemProd{float:left;padding:0.2em 1em 0.6em 1em;box-sizing: border-box;min-height:120px}
-.DivHomeImagemProd .EstImgFC{max-width:120px;max-height:100px;border:1px solid #eeeeee}
+.DivHomeImagemProd .EstImgFC{max-width:120px;max-height:100px}
 .DivHomeNomeProd{max-width:222px;width:100%;font-size:0.9em;height:40px;box-sizing:border-box;font-family:'Open Sans',verdana,arial;font-weight:400}
 .DivIntHomeProd{float:left;width:50%}
 .DivHomePriceProd{text-align:left}
