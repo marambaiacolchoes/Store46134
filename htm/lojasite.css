@@ -345,7 +345,7 @@ a #HeaderCartTotalFC{position:relative;top:3px;font-size:15px;font-family:'Open 
 .DivListProd:hover{border-radius:5px}
 .DivListProdNomeProd{max-width:222px;width:100%;font-size:0.9em;height:40px;box-sizing:border-box;font-family:'Open Sans',verdana,arial;font-weight:400;border:1px solid #FFFFFF;border-top-color:#FFFFFF;border-left-color:#FFFFFF;border-right-color:#FFFFFF;border-bottom-color:#FFFFFF}
 .DivListProdImagemProd{float:left;padding:0.2em 1em 0.6em 1em;box-sizing:border-box;min-height:120px}
-.DivListProdImagemProd .EstImgFC{max-width:150px;max-height:150px}
+.DivListProdImagemProd .EstImgFC{max-width:200px;max-height:200px}
 .DivIntListProdProd{float:left;width:50%}
 .DivListProdPriceProd{text-align:left;min-height:130px}
 .DivListProd .DivListProdNomeProd{max-width:100%}
@@ -1149,7 +1149,7 @@ span .FooterNewsletterInput{height:38px;font-size:14px;padding:0 0 0 10px;width:
 /* Video and Image Product */
 .videoProd{max-width:140px;max-height:200px}
 .DivHomeImagemProd img{max-width:120px;max-height:120px;border:1px solid #eeeeee;margin-bottom:65px;margin-top:10px}
-.DivListProdImagemProd img{max-width:120px;max-height:120px;border:1px solid #eeeeee;margin-bottom:55px;margin-top:10px}
+.DivListProdImagemProd img{max-width:200px;max-height:200px;margin-bottom:55px;margin-top:10px}
 
 /* Next page of products buttons */
 .estNextPageButFC{border-radius:3px;background:#44ac55;color:#fff;padding:15px;border:0;min-width:40%;cursor:pointer;margin-top:20px;transition:opacity .5s ease;font-size:1.1em}
