@@ -1,3 +1,6 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" media="all">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -25,11 +28,33 @@ FCLib$.LazyLoadWaitImage=FC$.PathImg+"loading-lazy-load.gif?cccfc=1"; //loading 
     <a href="<StoreDomain>"><div class="FCToolBarLogo"><img alt="<NomeLoja>" src="<PathTo file="images/logotopo.png">"></div></a>
     <a href="<url-categories>" class="HeaderMenuToolbarFC"><span class="HeaderMenuULIconFC HeaderMenuCatDepFC"><img64 src="<BaseLoja>images/iconcat.svg" plain="true" width="18" height="18"></span> <Categorias></a>
     
+    <!-- SearchBar
     <form name="TopSearchToolbarForm" id="autocomplete-form-toolbar" class="FCToolBarForm" method="GET" action="<url-prod>">
     <input type="hidden" name="<par-typed>" value="true">
     <input type="text" id="autocomplete-toolbar" value="" name="<par-text>" class="InputTextBusca ui-autocomplete-input" placeholder="Digite sua busca aqui" autocomplete="on">
     <a href="#search" onclick="sF$.fnSearchToolbarSubmit(document.TopSearchToolbarForm);" class="btn1 btn-sent FCToolBarButton"><span class="HeaderSerachIMGIconFC"><img64 src="<BaseLoja>images/iconsearch.svg" plain="true" width="25" height="25" alt="Buscar" title="Buscar"></span></a>
     </form>
+    -->
+
+    <!--SerachBar Bootstrap-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Custom search field</h2>
+          <div id="custom-search-input">
+            <div class="input-group col-md-12">
+              <input type="text" class="form-control input-lg" placeholder="Buscar" />
+              <span class="input-group-btn">
+                <button class="btn btn-info btn-lg" type="button">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <span class="FCToolBarChatTel">
       <a href="#" style="float:left;" class=""><img64 src="<BaseLoja>images/iconcomphone.svg" plain="true" width="20" height="20"></a>
