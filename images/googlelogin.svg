@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="46px" height="46px"
 	 viewBox="0 0 46 46" enable-background="new 0 0 46 46" xml:space="preserve">
-<filter  height="200%" width="200%" id="filter-1" y="-50%" x="-50%" filterUnits="objectBoundingBox">
-	<feOffset  result="shadowOffsetOuter1" dx="0" dy="1" in="SourceAlpha"></feOffset>
+<filter  width="200%" height="200%" x="-50%" y="-50%" filterUnits="objectBoundingBox" id="filter-1">
+	<feOffset  result="shadowOffsetOuter1" dy="1" dx="0" in="SourceAlpha"></feOffset>
 	<feGaussianBlur  result="shadowBlurOuter1" in="shadowOffsetOuter1" stdDeviation="0.5"></feGaussianBlur>
 	
-		<feColorMatrix  type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.168 0" result="shadowMatrixOuter1" in="shadowBlurOuter1">
+		<feColorMatrix  type="matrix" result="shadowMatrixOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.168 0" in="shadowBlurOuter1">
 		</feColorMatrix>
-	<feOffset  result="shadowOffsetOuter2" dx="0" dy="0" in="SourceAlpha"></feOffset>
+	<feOffset  result="shadowOffsetOuter2" dy="0" dx="0" in="SourceAlpha"></feOffset>
 	<feGaussianBlur  result="shadowBlurOuter2" in="shadowOffsetOuter2" stdDeviation="0.5"></feGaussianBlur>
 	
-		<feColorMatrix  type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.084 0" result="shadowMatrixOuter2" in="shadowBlurOuter2">
+		<feColorMatrix  type="matrix" result="shadowMatrixOuter2" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.084 0" in="shadowBlurOuter2">
 		</feColorMatrix>
 	<feMerge>
 		<feMergeNode  in="shadowMatrixOuter1"></feMergeNode>
@@ -28,37 +27,37 @@
 	</g>
 	<g id="btn_google_light_pressed" transform="translate(-1.000000, -1.000000)" sketch:type="MSArtboardGroup">
 		<g id="button" transform="translate(4.000000, 4.000000)" sketch:type="MSLayerGroup" filter="url(#filter-1)">
-			<path fill="#F2F2F2" d="M42.327,20.238c0,12.31-9.979,22.29-22.289,22.29c-12.31,0-22.289-9.979-22.289-22.29
+			<path fill="#646464" d="M42.327,20.238c0,12.31-9.979,22.29-22.289,22.29c-12.31,0-22.289-9.979-22.289-22.29
 				C-2.25,7.931,7.729-2.05,20.039-2.05C32.348-2.05,42.327,7.931,42.327,20.238z"/>
 			<g display="none">
 				<g sketch:type="MSShapeGroup" display="inline">
-					<path fill="#EEEEEE" d="M2.207-17.651h40.12c1.229,0,2.229,0.998,2.229,2.229v40.117c0,1.23-0.998,2.23-2.229,2.23H2.207
-						c-1.23,0-2.228-1-2.228-2.23v-40.117C-0.021-16.653,0.977-17.651,2.207-17.651z"/>
+					<path fill="#EEEEEE" d="M2.207-17.651h40.12c1.229,0,2.229,0.998,2.229,2.229v40.117c0,1.229-0.998,2.229-2.229,2.229H2.207
+						c-1.23,0-2.228-1-2.228-2.229v-40.117C-0.021-16.653,0.977-17.651,2.207-17.651z"/>
 				</g>
 				<g display="inline">
-					<path fill="#EEEEEE" d="M2.207-17.651h40.12c1.229,0,2.229,0.998,2.229,2.229v40.117c0,1.23-0.998,2.23-2.229,2.23H2.207
-						c-1.23,0-2.228-1-2.228-2.23v-40.117C-0.021-16.653,0.977-17.651,2.207-17.651z"/>
+					<path fill="#EEEEEE" d="M2.207-17.651h40.12c1.229,0,2.229,0.998,2.229,2.229v40.117c0,1.229-0.998,2.229-2.229,2.229H2.207
+						c-1.23,0-2.228-1-2.228-2.229v-40.117C-0.021-16.653,0.977-17.651,2.207-17.651z"/>
 				</g>
 				<g display="inline">
-					<path fill="#EEEEEE" d="M2.207-17.651h40.12c1.229,0,2.229,0.998,2.229,2.229v40.117c0,1.23-0.998,2.23-2.229,2.23H2.207
-						c-1.23,0-2.228-1-2.228-2.23v-40.117C-0.021-16.653,0.977-17.651,2.207-17.651z"/>
+					<path fill="#EEEEEE" d="M2.207-17.651h40.12c1.229,0,2.229,0.998,2.229,2.229v40.117c0,1.229-0.998,2.229-2.229,2.229H2.207
+						c-1.23,0-2.228-1-2.228-2.229v-40.117C-0.021-16.653,0.977-17.651,2.207-17.651z"/>
 				</g>
 				<g display="inline">
-					<path fill="#EEEEEE" d="M2.207-17.651h40.12c1.229,0,2.229,0.998,2.229,2.229v40.117c0,1.23-0.998,2.23-2.229,2.23H2.207
-						c-1.23,0-2.228-1-2.228-2.23v-40.117C-0.021-16.653,0.977-17.651,2.207-17.651z"/>
+					<path fill="#EEEEEE" d="M2.207-17.651h40.12c1.229,0,2.229,0.998,2.229,2.229v40.117c0,1.229-0.998,2.229-2.229,2.229H2.207
+						c-1.23,0-2.228-1-2.228-2.229v-40.117C-0.021-16.653,0.977-17.651,2.207-17.651z"/>
 				</g>
 			</g>
 		</g>
 		<g id="logo_googleg_48dp" transform="translate(15.000000, 15.000000)" sketch:type="MSLayerGroup">
-			<path id="Shape" sketch:type="MSShapeGroup" fill="#4285F4" d="M23.398,9.848c0-1.03-0.096-2.021-0.267-2.971H9.457v5.618h7.814
+			<path id="Shape" sketch:type="MSShapeGroup" fill="#FFFFFF" d="M23.398,9.848c0-1.03-0.096-2.021-0.268-2.971H9.457v5.618h7.814
 				c-0.336,1.813-1.359,3.354-2.896,4.383v3.644h4.693C21.813,17.995,23.398,14.271,23.398,9.848L23.398,9.848z"/>
-			<path id="Shape_1_" sketch:type="MSShapeGroup" fill="#34A853" d="M9.457,24.04c3.919,0,7.207-1.299,9.611-3.521l-4.693-3.643
-				c-1.301,0.871-2.966,1.385-4.918,1.385c-3.784,0-6.984-2.551-8.127-5.986h-4.852v3.765C-1.132,20.786,3.78,24.04,9.457,24.04
+			<path id="Shape_1_" sketch:type="MSShapeGroup" fill="#FFFFFF" d="M9.457,24.04c3.919,0,7.207-1.299,9.611-3.521l-4.693-3.644
+				c-1.301,0.871-2.966,1.385-4.918,1.385c-3.784,0-6.984-2.551-8.127-5.985h-4.852v3.765C-1.132,20.786,3.78,24.04,9.457,24.04
 				L9.457,24.04z"/>
-			<path id="Shape_2_" sketch:type="MSShapeGroup" fill="#FBBC05" d="M1.33,12.275c-0.29-0.868-0.456-1.801-0.456-2.758
-				c0-0.958,0.166-1.888,0.456-2.759V2.995h-4.852c-0.983,1.961-1.544,4.18-1.544,6.522c0,2.344,0.561,4.56,1.544,6.521L1.33,12.275
+			<path id="Shape_2_" sketch:type="MSShapeGroup" fill="#FFFFFF" d="M1.33,12.275c-0.29-0.868-0.456-1.801-0.456-2.758
+				c0-0.958,0.166-1.889,0.456-2.76V2.995h-4.852c-0.983,1.961-1.544,4.18-1.544,6.522c0,2.344,0.561,4.56,1.544,6.521L1.33,12.275
 				L1.33,12.275z"/>
-			<path id="Shape_3_" sketch:type="MSShapeGroup" fill="#EA4335" d="M9.457,0.771c2.131,0,4.045,0.732,5.551,2.172l4.165-4.165
+			<path id="Shape_3_" sketch:type="MSShapeGroup" fill="#FFFFFF" d="M9.457,0.771c2.131,0,4.045,0.732,5.551,2.172l4.165-4.165
 				c-2.515-2.345-5.803-3.783-9.716-3.783c-5.677,0-10.589,3.254-12.979,8L1.33,6.759C2.473,3.325,5.673,0.771,9.457,0.771
 				L9.457,0.771z"/>
 			<path id="Shape_4_" sketch:type="MSShapeGroup" fill="none" d="M-5.066-5.005h29.044V24.04H-5.066V-5.005z"/>
