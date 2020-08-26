@@ -1,4 +1,4 @@
-// Template Fastcommerce [06/2018][1]
+// Template Fastcommerce [06/2018][3]
 
 var iNextPageButFC=1;
 var bBuyWishlist=false;
@@ -31,7 +31,7 @@ var sF$=(function(){
     var i,j=d.MM_p.length,a=fnPreloadImages.arguments; for(i=0; i<a.length; i++)
     if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
   }
- 
+
   function fnFormatNumber(num){
     num=num.toString().replace(/\$|\,/g,'');
     if(isNaN(num))num="0";
@@ -77,24 +77,23 @@ var sF$=(function(){
     var sInterest;
     if(typeof Juros!="undefined"){
       if(iMaxParcels==0||iMaxParcels>Juros.length)iMaxParcels=Juros.length;
-      if(Juros[iMaxParcels-1]>0)sInterest=""; else sInterest=" sem juros";
+      if(Juros[iMaxParcels-1]>0)sInterest=""; else sInterest=" <span class='home-price-breakline'>sem juros</span>";
     }
     else{
       iMaxParcels=0;
     }
     if(Price!=OriginalPrice){
       sPrice+="<div class=\"prices\">";
-      sPrice+="  <div class=\"old-price\">De&nbsp; <span>"+FormatPrice(OriginalPrice,FC$.Currency)+"</span><div class=\"por\">Por</div></div>";
-      sPrice+="  <div class=\"price\"><span class=\"currency\"><strong>"+FC$.Currency+" </span><span class=\"int\">"+ fnFormatNumber(iPriceInt) +"</span><span class=\"dec\">,"+ PriceDecimal +"</span></strong></div>";
+      sPrice+="  <div class=\"old-price\">De&nbsp; <span>"+FormatPrice(OriginalPrice,FC$.Currency)+"</span></div>";
+      sPrice+="  <div class=\"price home-price\"><span class=\"home-price-por\">Por </span>"+FC$.Currency + " " + fnFormatNumber(iPriceInt) +","+ "<span class=\"home-price-cents\">" + PriceDecimal + "</span>" +"</div>";
       if(iMaxParcels>1)sPrice+="  <div class=\"installments\"><strong><span class=\"installment-count\">"+ iMaxParcels +"</span>x</strong> de <strong><span class=\"installment-price\">"+FormatPrice(CalculaParcelaJurosCompostos(Price,iMaxParcels),FC$.Currency)+"</span></strong>"+ sInterest +"</div>";
-      sPrice+="</div>";
+      sPrice+="</div><br>";
     }
     else{
       sPrice+="<div class=\"prices\">";
-      sPrice+="  <div class=\"old-price\"><span>&nbsp;</span><div class=\"por\">Por</div></div>";
-      sPrice+="  <div class=\"price\"><span class=\"currency\"><strong>"+FC$.Currency+" </span><span class=\"int\">"+ fnFormatNumber(iPriceInt) +"</span><span class=\"dec\">,"+ PriceDecimal +"</span></strong></div>";
+      sPrice+="  <div class=\"price home-price\">"+FC$.Currency + " " + fnFormatNumber(iPriceInt) +","+ "<span class=\"home-price-cents\">" + PriceDecimal + "</span>" +"</div>";
       if(iMaxParcels>1)sPrice+="  <div class=\"installments\"><strong><span class=\"installment-count\">"+ iMaxParcels +"</span>x</strong> de <strong><span class=\"installment-price\">"+FormatPrice(CalculaParcelaJurosCompostos(Price,iMaxParcels),FC$.Currency)+"</span></strong>"+ sInterest +"</div>";
-      sPrice+="</div>";
+      sPrice+="</div><br>";
     }
     if(idPrice)idPrice.innerHTML=sPrice;
     //desconto
@@ -148,20 +147,6 @@ var sF$=(function(){
     }
   }
   
-  function fnSearchToolbarSubmit(oForm){
-    var oSearch=(FCLib$.fnUseEHC()?oForm.text:oForm.texto);
-    if(oSearch){
-      var sSearch=oSearch.value;
-      if(sSearch.length<2){
-        alert("Preencha a busca corretamente");
-        oSearch.focus();
-       }
-       else{
-        document.TopSearchToolbarForm.submit()
-       }
-    }
-  }
-
   function fnCustomizeIconsSocialNetworks(isProd){
   //se isProd personaliza ícones do detalhe do produto, caso contrário do rodapé
     if(isProd)var oContentHTML=document.getElementById("idShareProd");
@@ -182,12 +167,14 @@ var sF$=(function(){
           aImgsShare[i].src=FC$.PathImg+ 'iconprodpinterest.svg?cccfc=1';
         }
         if(isProd){ //produto
-          aImgsShare[i].style.width="25px";
-          aImgsShare[i].style.height="25px";
+          aImgsShare[i].style.width="40px";
+          aImgsShare[i].style.height="43px";
+          aImgsShare[i].setAttribute("alt","Redes Sociais");
         }
         else{ //rodapé
-          aImgsShare[i].style.width="20px";
-          aImgsShare[i].style.height="20px";
+          aImgsShare[i].style.width="40px";
+          aImgsShare[i].style.height="43px";
+          aImgsShare[i].setAttribute("alt","Redes Sociais");
         }
     }
   }
@@ -251,7 +238,7 @@ var sF$=(function(){
       var sPageHistory="";
       try{var sBar=(oHistoryPages[0].getElementsByTagName("title")[0].childNodes[0].nodeValue);}
       catch(e){var sBar="";}
-      if(sBar!=""){sPageHistory+="<div class='FooterSepFC col-xlarge-12'><img data-src='"+ FC$.PathImg +"footersep.png?cccfc=1'></div><div id='idDivPageHistory'><div id='idPageHistoryFC'><div id='idTitPageHistory'>Páginas Visitadas:</div><ul id='idListPageHistoryFC'>";}  
+      if(sBar!=""){sPageHistory+="<div id='idDivPageHistory'><div id='idPageHistoryFC'><div class='col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left'><div id='idTitPageHistory'><h3>Meu histórico de navegação:</h3></div></div><div class='col-small-12 col-medium-12 col-large-12 col-xlarge-12 fc-footer-history-sep'></div><ul id='idListPageHistoryFC'>";}  
       for (i=0;i<oHistoryPages.length;i++){
         sTitleProd=oHistoryPages[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
         sLinkProd=oHistoryPages[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
@@ -261,7 +248,7 @@ var sF$=(function(){
         catch(e){sPriceProd="";}
         sTitleProd=sTitleProd.substring(0,20);
         sPageHistory+="<li>";
-        sPageHistory+="<div class='EstImagePageHistory'><a href='"+ sLinkProd +"'><img data-src='"+ sImageProd +"'  title='"+ sTitleProd +"' border=0 class=EstFotoPageHistory onError=MostraImgOnError(this,0)></a></div>";
+        sPageHistory+="<div class='EstImagePageHistory'><a href='"+ sLinkProd +"'><img data-src='"+ sImageProd +"' alt='"+ sTitleProd +"' border=0 class=EstFotoPageHistory onError=MostraImgOnError(this,0)></a></div>";
         sPageHistory+="<div class='EstNamePageHistory'><a href='"+ sLinkProd +"'>"+ sTitleProd +"</a></div>";
         sPageHistory+="<div class=EstPricePageHistory>"+ sPriceProd +"</div>";
         sPageHistory+="</li>";
@@ -297,7 +284,7 @@ var sF$=(function(){
   function fnLoginUserName(NameUser,PicUser){
     var oImgGlobalSign=document.getElementById("idImgGlobalSignFC");
     if(NameUser==""){
-      jQuery('.loginInfo').html("<span class='col-small-6'>Olá, <b>visitante</b></span> <span class='hide-small'>|</span> <span class='col-small-6'>Faça seu <a href='"+ FCLib$.uk("url-register") +"?pp=3&passo=1&sit=1'><b>Login</b></a></span>");
+      jQuery('.loginInfo').html("<span class='col-small-6'>Olá, <b>visitante</b></span> <span class='hide-small header-login-pipe'>|</span> <span class='col-small-6'>Faça seu <a href='"+ FCLib$.uk("url-register") +"?pp=3&passo=1&sit=1'><b>Login</b></a></span>");
       if(oImgGlobalSign){oImgGlobalSign.style.display="";}
     }
     else{
@@ -307,7 +294,7 @@ var sF$=(function(){
     }
     var oFoto=document.getElementById("UserImage");
     if(oFoto){
-      if(PicUser==undefined || PicUser==""){oFoto.src=FC$.PathImg+"iconuser.svg";}
+      if(PicUser==undefined || PicUser==""){oFoto.src=FC$.PathImg+"iconuser.svg?cccfc=1";}
       else{oFoto.src=PicUser;}   
     } 
   }
@@ -323,7 +310,7 @@ var sF$=(function(){
     FC$.ClientID==0;
     fnShowGlobalSignin();
   }
-   
+  
   function fnMostraDescontoProdDet(PrecoProd){
     if(PrecoProd==0 || iDescontoAvista==0)return;
     document.getElementById("idPriceAVista").innerHTML="<div id='PriceAVista'><p>Para pagamentos à vista ganhe <b>"+ iDescontoAvista +"% de desconto</b>.</p><p>Valor com desconto <b>"+FormatPrice(PrecoProd*((100-iDescontoAvista)/100),FC$.Currency)+"</b></p></div>";
@@ -335,20 +322,20 @@ var sF$=(function(){
     }
   }
   
-    //Show and Hide Banner Home
+  //Show and Hide Banner Home
   function fnHideShowBannersHome(){
     var FCHideHomeBanners = document.getElementById('FC-HideHomeBanners');
     var FCShowHomeBanners = document.getElementById('FC-ShowHomeBanners');
     FCShowHomeBanners.innerHTML = FCHideHomeBanners.innerHTML;
   }
   
-    //Aviso de disponibilidade
+  //Aviso de disponibilidade
   function fnLinkDisp(Estoque,IDProduto){
     if(Estoque==0){
       document.write("<a href='javascript:MostraDisp("+ FC$.IDLoja +","+ IDProduto +")' title='Clique aqui para ser avisado quando este produto estiver disponível'>Avise-me quando estiver disponível</a>");
     }
   }
-
+  
   // Video Filter
   function fnShowVideo(IDProduto,oProdFilters,sImagemProdPri,sNomeProd){
     var sVideo="";
@@ -361,7 +348,7 @@ var sF$=(function(){
   
   // Video and Image Product
   function fnVideoImage(IDProduto,videoProduct,ImagemProdPri,NomeProd){
-    var replaceNomeProd = NomeProd.replace(/-/g,' ');  
+    var replaceNomeProd = NomeProd.replace(/-/g,' ');
     if (videoProduct==""){
       document.getElementById("id-video-image"+IDProduto).innerHTML="<div class='ImgCapaListProd DivListproductStyleImagemZoom'><img data-src="+ ImagemProdPri +" alt=\""+ replaceNomeProd +"\" onerror='MostraImgOnError(this,0)'></div>";
     }else{
@@ -413,7 +400,7 @@ var sF$=(function(){
       }
     }
   }
-  
+   
   // Mouseover change image Home and List
   function fnChangeImages(sImagemProdPri,sImagemProdDet,sDescUrl,sIdProduto,sNomeProd){
     var replaceNomeProd=sNomeProd.replace(/-/g,' ');
@@ -454,7 +441,7 @@ var sF$=(function(){
       }
     }
   }
-
+  
   return{
     sCurrentPage:sCurrentPage,
     fnGetID:fnGetID,
@@ -465,7 +452,6 @@ var sF$=(function(){
     fnShowButtonCart:fnShowButtonCart,
     fnShowDisp:fnShowDisp,
     fnSearchSubmit:fnSearchSubmit,
-    fnSearchToolbarSubmit:fnSearchToolbarSubmit,
     fnFormatNumber:fnFormatNumber,
     fnShowCart:fnShowCart,
     fnGoCart:fnGoCart,
@@ -549,13 +535,13 @@ function fnShowCEP(IDProd){
     var sNumCEP=fnGetCookie('CEP'+FC$.IDLoja);
     if(sNumCEP==null)sNumCEP="";
     sCEP="<div id='idDivCEPFC'>";
-    sCEP+="  <div id='idDivTitCEP'><img src='"+ FC$.PathImg +"iconziptruck.svg?cccfc=1' width='25' height='25' alt='Zip box' /><span>Simule o valor do frete</span></div>";
+    sCEP+="  <div id='idDivTitCEP'><span class='font-bold'>Simule o valor do frete</span></div>";
     sCEP+="  <div id='idDivContentCEP'>";
     sCEP+="    <div id='idDivContentFieldsCEP'>";
     sCEP+="      <div id='idDivCEPCalc'>";
     sCEP+="        <div class='FieldCEP FieldCEPQty'><label>Qtd.</label><input type='number' id='idQtdZip"+ IDProd +"' value='1' maxlength='4'></div>";
     sCEP+="        <div class='FieldCEP FieldCEPNum'><input type='text' placeholder='CEP' id='idZip"+ IDProd +"' value='"+ sNumCEP +"' maxlength='9'></div>";
-    sCEP+="        <img src='"+ FC$.PathImg +"iconnewsletter.svg?cccfc=1' height='29px' id='idCEPButton' class='FieldCEPBtn' onclick='fnGetShippingValuesProd("+ IDProd +")'>";
+    sCEP+="        <img src='"+ FC$.PathImg +"icon-arrow-cep.svg?cccfc=1' height='29px' alt='Simular frete' id='idCEPButton' class='FieldCEPBtn' onclick='fnGetShippingValuesProd("+ IDProd +")'>";
     sCEP+="      </div>";
     sCEP+="    </div>";
     sCEP+="    <div id='idDivImgLoadingCEPFC'><img src='"+ FC$.PathImg +"loadingcep.gif?cccfc=1' vspace=3 style='display:none;' id=ImgLoadingCEP></div>";
@@ -676,23 +662,9 @@ function fnCallbackSuggestions(aTerms){
 // Funções executadas no rodapé
 function fnFooter(){
   sF$.fnUpdateCart(false,false);
-  //Convert Nav UL > LI to Select
-  jQuery(function () {
-    // Menu Produtos
-    jQuery('#FooterNav1').tinyNav({
-      header: 'Produtos'
-    });
-    // Menu Minha Conta
-    jQuery('#FooterNav2').tinyNav({
-      header: 'Minha Conta'
-    });
-    // Menu Informações
-    jQuery('#FooterNav3').tinyNav({
-      header: 'Informações'
-    });
-  });
   FCLib$.onReady(sF$.fnCustomizeIconsSocialNetworks(false));
   if(FC$.query!="")FCLib$.onReady(FCLib$.fnGetSuggestions(decodeURIComponent(FC$.query),true,fnCallbackSuggestions));
+  
   if(FC$.Page=="Products"){
     if(iQtdProds>2){
       var oScript=document.createElement('script');
@@ -708,23 +680,26 @@ function fnFooter(){
       sF$.fnHideShowBannersHome();
       sF$.fnSlideshowSwiper();
     }
-  jQuery(document).ready(function(){sF$.fnLoadXMLPageHistory();});
+
+  jQuery(document).ready(function(){
+    sF$.fnLoadXMLPageHistory();
+  });
+  
   sF$.fnLogout();
   fnShowYear();
+
   FCLib$.ShowBadgeFC();
   var ListVerify=document.querySelector('.ProductList');
   if (FC$.Page=="Products" && ListVerify){
     document.querySelector('#idFCContent').setAttribute('class','col-large-9 col-xlarge-10');
   };
+
   FCLib$.onReady(FCLib$.execWaveInterchange);
-  NProgress.start();
-  window.addEventListener("load",function(event){NProgress.done();});
 }
 
 function fnFooterPed(){
   fnShowYear();
 }
-
 function fnShowYear(){
   //Show year Rodape.htm
   var footerDate = new Date();
@@ -733,26 +708,6 @@ function fnShowYear(){
   if(oFooterFullYear)oFooterFullYear.innerHTML = footerYearDisplay;
 }
 // Funções executadas no rodapé
-
-/*Executa Toolbar*/
-function ToolbarCartExec(){
-  //Toolbar
-  var TemScroll = false;
-  jQuery(window).scroll(function(event) {
-    if(jQuery(window).scrollTop() > 150 && !TemScroll){
-      jQuery('.FCToolBar').fadeIn(300);
-    }else{jQuery('.FCToolBar').fadeOut(150);}
-  });
-
-  //hover do menu
-  jQuery('.zf-topMainNav ul > li > a').each(function(){
-    jQuery(this).hover(function() {
-      jQuery(this,'a').css('display', 'block').stop().animate({marginTop: '-3px'}, 100);
-    }, function(){
-      jQuery(this,'a').stop().animate({marginTop: '3px'}, 100);
-    });
-  });
-}
 
 // mixitUp
 function execMixClasses(){
@@ -767,20 +722,6 @@ function execMixClasses(){
     var elCat = document.querySelectorAll('.FCBtnMixit');
     elCat[0].setAttribute("class", "FCBtnMixit sort active");
   });  
-}
-
-function MobileMenuClick(){
-  var isVisible = false;
-  jQuery(".SmallMenuButtom").click(function(){
-    if(isVisible === false){
-      jQuery('.SmallMenuList').slideDown();
-      jQuery('.SmallMenuIcon').html('<svg width="18" height="18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32"><g id="icomoon-ignore"><line stroke-width="1" x1="" y1="" x2="" y2="" stroke="#449FDB" opacity=""></line></g><path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z" fill="#fff"></path></svg>');
-    }else{
-      jQuery('.SmallMenuList').slideUp();
-      jQuery('.SmallMenuIcon').html('<svg width="18" height="18" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve"><g id="icomoon-ignore">  <line fill="none" stroke="#449FDB" x1="0" y1="0" x2="0" y2="0"></line></g><path fill="#FFFFFF" d="M25.6,14.4H6.4c-0.883,0-1.6,0.717-1.6,1.6s0.717,1.6,1.6,1.6h19.2c0.885,0,1.601-0.717,1.601-1.6 S26.484,14.4,25.6,14.4z M6.4,11.2h19.2c0.885,0,1.601-0.717,1.601-1.6C27.2,8.717,26.484,8,25.6,8H6.4C5.517,8,4.8,8.717,4.8,9.6 C4.8,10.483,5.517,11.2,6.4,11.2z M25.6,20.8H6.4c-0.883,0-1.6,0.716-1.6,1.601S5.517,24,6.4,24h19.2c0.885,0,1.601-0.715,1.601-1.6 S26.484,20.8,25.6,20.8z"></path></svg>');
-    }
-    isVisible = !isVisible;
-  });
 }
 
 var bCascate=false;
@@ -799,8 +740,8 @@ function fnMaxInstallmentsGrid(PrecoProd,MaxParcelas){
   if(typeof Juros!="undefined"){
     if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return "";
     if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
-    if(Juros[MaxParcelas-1]>0)ComSem=""; else ComSem="<font color=#990000> sem juros</font>";
-    return "<span class=EstParc> ou <b>"+MaxParcelas+"x</b>"+ComSem+" de <b>"+FormatPrice(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas),FC$.Currency)+"</b></span>";
+    if(Juros[MaxParcelas-1]>0)ComSem=""; else ComSem="<font color=#333333> sem juros</font>";
+    return "<span class=EstParc> <br><b>"+MaxParcelas+"x</b>"+ComSem+" de <b>"+FormatPrice(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas),FC$.Currency)+"</b></span>";
   }else{
     return "";
   }
@@ -818,7 +759,7 @@ function FormatNumber(num){
 /*Função para mostrar valor economizado em produtos em promoção*/
 function fnShowEconomyGrid(ProdPrice,ProdPriceOri){
   if(ProdPrice!=ProdPriceOri && typeof FormatNumber == 'function' && typeof FormatPrice == 'function' ){
-    return "<font style='font-size:16px;display:block;margin:10px 0;' color=#6f9e45>Economize <b>"+ FormatPrice(ProdPriceOri-ProdPrice,FC$.Currency) +"</b> ("+ FormatNumber(((ProdPriceOri-ProdPrice)/ProdPriceOri)*100)+"%)</font>";
+    return "<font style='font-size:16px;display:block;margin:10px 0;' color=#33691e>Economize <b>"+ FormatPrice(ProdPriceOri-ProdPrice,FC$.Currency) +"</b> ("+ FormatNumber(((ProdPriceOri-ProdPrice)/ProdPriceOri)*100)+"%)</font>";
   }else{return "";}
 }
 
@@ -827,17 +768,17 @@ function fnShowCEPGrid(IDProd){
   if(FC$.TypeFrt==3){
     var sNumCEP=fnGetCookie('CEP'+FC$.IDLoja);
     if(sNumCEP==null)sNumCEP="";
-    sCEP="<div id='idDivCEPFC'>";
-    sCEP+="  <div id='idDivTitCEP'><img src='"+ FC$.PathImg +"iconziptruck.svg?cccfc=1' width='25' height='25' alt='Zip box' /><span>Simule o valor do frete</span></div>";
+    sCEP="<div id='idDivCEPFC' class='ProductDet-cep-position'>";
+    sCEP+="  <div id='idDivTitCEP'><span class='font-bold'>Simule o valor do frete:</span></div>";
     sCEP+="  <div id='idDivContentCEP'>";
     sCEP+="    <div id='idDivContentFieldsCEP'>";
     sCEP+="      <div id='idDivCEPCalc'>";
     sCEP+="        <div class='FieldCEP FieldCEPQty'><label>Qtd.</label><input type='number' id='idQtdZip"+ IDProd +"' value='1' maxlength='4'></div>";
     sCEP+="        <div class='FieldCEP FieldCEPNum'><input type='text' placeholder='CEP' id='idZip"+ IDProd +"' value='"+ sNumCEP +"' maxlength='9'></div>";
-    sCEP+="        <img src='"+ FC$.PathImg +"iconnewsletter.svg?cccfc=1' height='29px' id='idCEPButton' class='FieldCEPBtn' onclick='fnGetShippingValuesProdGrid("+ IDProd +")'>";
+    sCEP+="        <img src='"+ FC$.PathImg +"icon-arrow-cep.svg?cccfc=1' height='29px' id='idCEPButton' alt='Simular frete' class='FieldCEPBtn' onclick='fnGetShippingValuesProdGrid("+ IDProd +")'>";
     sCEP+="      </div>";
     sCEP+="    </div>";
-    sCEP+="    <div id='idDivImgLoadingCEPFC'><img src='"+ FC$.PathImg +"loadingcep.gif?cccfc=1' vspace=3 style='display:none;' id=ImgLoadingCEP></div>";
+    sCEP+="    <div id='idDivImgLoadingCEPFC'><img src='"+ FC$.PathImg +"loadingcep.gif?cccfc=1' alt=' ' vspace=3 style='display:none;' id=ImgLoadingCEP></div>";
     sCEP+="    <div id='idShippingValues"+ IDProd +"'></div></div>";
     sCEP+="  </div>";
     sCEP+="</div>";
@@ -849,7 +790,7 @@ function fnShowCEPGrid(IDProd){
 function fnGetShippingValuesProdGrid(IDProd){
   sCEP=document.getElementById("idZip"+ IDProd).value;
   fnSetCookie('CEP'+FC$.IDLoja,sCEP);
-  if(sCEP==""){document.getElementById("idShippingValues"+IDProd).innerHTML="<span class='freightResult' style=color:#990000;>Informe o CEP</span>";return;}
+  if(sCEP==""){document.getElementById("idShippingValues"+IDProd).innerHTML="<span class='freightResult'>Informe o CEP</span>";return;}
   document.getElementById("idShippingValues"+IDProd).innerHTML="";
   document.getElementById("ImgLoadingCEP").style.display='';
   var iQty=document.getElementById("idQtdZip"+IDProd).value;
@@ -864,7 +805,7 @@ function processXMLCEPGrid(obj,IDProd){
   var iErr=ReadXMLNode(obj,"err");if(iErr==null)return;
   if(iErr!="0"){
     document.getElementById("ImgLoadingCEP").style.display='none';
-    oShippingValues.innerHTML="<span class='freightResult' style=color:#990000;>"+ ReadXMLNode(obj,"msg") +"</span>";
+    oShippingValues.innerHTML="<span class='freightResult-CEP'>"+ ReadXMLNode(obj,"msg") +"</span>";
     return;
   }
   oShippingValues.innerHTML="";
@@ -910,11 +851,11 @@ function fnShowGlobalSignin(){
     var bGoogleLogin=false;
     var sImgs="";
     if(typeof FC$.FacebookSigninID!="undefined"){
-      sImgs+="<img src='"+ FC$.PathImg +"facebooklogin.svg' class='FacebookSigninClass' data-loginsuccess='fnLoginShowUserName'>";
+      sImgs+="<img src='"+ FC$.PathImg +"facebooklogin.svg?cccfc=1' class='FacebookSigninClass' data-loginsuccess='fnLoginShowUserName'>";
       bFacebookLogin=true;
     } 
     if(typeof FC$.GoogleSigninID!="undefined"){
-      sImgs+="<img src='"+ FC$.PathImg +"googlelogin.svg' class='GoogleSigninClass' data-loginsuccess='fnLoginShowUserName'>";
+      sImgs+="<img src='"+ FC$.PathImg +"googlelogin.svg?cccfc=1' class='GoogleSigninClass' data-loginsuccess='fnLoginShowUserName'>";
       bGoogleLogin=true;
     }
     if(bFacebookLogin||bGoogleLogin)oImgGlobalSign.innerHTML=sImgs;
@@ -928,47 +869,49 @@ function fnLoginShowUserName(user){
 }
 
 // Don't Go Popup
-FCLib$.onReady(function(){
-  if(FCLib$.GetID("overlay")){
-    //Dynamic Don't Go Container
-    var dynamicDontGoContainer = document.createElement('div');
-    dynamicDontGoContainer.id = 'ShowDontGoPopup';
-    dynamicDontGoContainer.className = 'DontGoPopup';
-    document.getElementsByTagName('body')[0].appendChild(dynamicDontGoContainer);
-  
-    //Dynamic Don't Go Container Elements
-    var dynamicDontGoContainerElements = document.createElement('div');
-    dynamicDontGoContainerElements.className = 'DontGoPopupContent';
-    dynamicDontGoContainer.appendChild(dynamicDontGoContainerElements);
-  
-    //Dynamic Don't Go Elements Close Button
-    var dynamicDontGoElementsCloseButton = document.createElement('div');
-    dynamicDontGoElementsCloseButton.className = 'DontGoPopupCloseButton';
-    dynamicDontGoContainerElements.appendChild(dynamicDontGoElementsCloseButton);
-    dynamicDontGoElementsCloseButton.innerHTML = "<img id='idBtnDontGoClose' border='0' onclick='sF$.fnCreateEventGA(\"DontGo\",\"Clique\",\"Close\");'>";
-  
-    //Dynamic Don't Go Elements Banner
-    var dynamicDontGoElementsBanner = document.createElement('div');
-    dynamicDontGoElementsBanner.className = 'DontGoBanner';
-    dynamicDontGoContainerElements.appendChild(dynamicDontGoElementsBanner);
-    dynamicDontGoElementsBanner.innerHTML = "<a id='idLinkDontGo' target='_self'><img id='idImgDontGo' src='' border='0' onclick='sF$.fnCreateEventGA(\"DontGo\",\"Clique\",\"Banner\");'></a>"; 
-  
-    //PreLoading Image Banner
-    var preLoadingDontGoBanner = new Image();
-    preLoadingDontGoBanner.onload = function () {
-      document.getElementById('idImgDontGo').src = preLoadingDontGoBanner.src;
-    };
-    preLoadingDontGoBanner.src = FC$.PathImg +"bannerpopupdontgo.jpg?cccfc=1";
-  
-    //Show Don't Go Popup
-    FCLib$.fnDontGo(userDontGo,{
-    DontGoBtnClose:FC$.PathImg +"botdontgoclose.svg?cccfc=1", //Close button
-    DontGoBanner:FC$.PathImg +"bannerpopupdontgo.jpg?cccfc=1", //Banner
-    DontGoLink:FCLib$.uk("url-sale"), //Link
-    DontGoAltParam:"UM DESCONTO ESPECIAL PARA VOCÊ!"}, //Alt Param
-    "DontGoCookie"); //Cookie name
-  }
-});
+if(FC$.Page=="Home" || FC$.Page=="Products"){
+  FCLib$.onReady(function(){
+    if(FCLib$.GetID("overlay")){
+      //Dynamic Don't Go Container
+      var dynamicDontGoContainer = document.createElement('div');
+      dynamicDontGoContainer.id = 'ShowDontGoPopup';
+      dynamicDontGoContainer.className = 'DontGoPopup';
+      document.getElementsByTagName('body')[0].appendChild(dynamicDontGoContainer);
+    
+      //Dynamic Don't Go Container Elements
+      var dynamicDontGoContainerElements = document.createElement('div');
+      dynamicDontGoContainerElements.className = 'DontGoPopupContent';
+      dynamicDontGoContainer.appendChild(dynamicDontGoContainerElements);
+    
+      //Dynamic Don't Go Elements Close Button
+      var dynamicDontGoElementsCloseButton = document.createElement('div');
+      dynamicDontGoElementsCloseButton.className = 'DontGoPopupCloseButton';
+      dynamicDontGoContainerElements.appendChild(dynamicDontGoElementsCloseButton);
+      dynamicDontGoElementsCloseButton.innerHTML = "<img id='idBtnDontGoClose' alt='Fechar popup' border='0' onclick='sF$.fnCreateEventGA(\"DontGo\",\"Clique\",\"Close\");'>";
+    
+      //Dynamic Don't Go Elements Banner
+      var dynamicDontGoElementsBanner = document.createElement('div');
+      dynamicDontGoElementsBanner.className = 'DontGoBanner';
+      dynamicDontGoContainerElements.appendChild(dynamicDontGoElementsBanner);
+      dynamicDontGoElementsBanner.innerHTML = "<a id='idLinkDontGo' target='_self'><img id='idImgDontGo' src='' border='0' onclick='sF$.fnCreateEventGA(\"DontGo\",\"Clique\",\"Banner\");'></a>"; 
+    
+      //PreLoading Image Banner
+      var preLoadingDontGoBanner = new Image();
+      preLoadingDontGoBanner.onload = function () {
+        document.getElementById('idImgDontGo').src = preLoadingDontGoBanner.src;
+      };
+      preLoadingDontGoBanner.src = FC$.PathImg +"bannerpopupdontgo.jpg?cccfc=1";
+    
+      //Show Don't Go Popup
+      FCLib$.fnDontGo(userDontGo,{
+      DontGoBtnClose:FC$.PathImg +"botdontgoclose.svg?cccfc=1", //Close button
+      DontGoBanner:FC$.PathImg +"bannerpopupdontgo.jpg?cccfc=1", //Banner
+      DontGoLink:FCLib$.uk("url-sale"), //Link
+      DontGoAltParam:"UM DESCONTO ESPECIAL PARA VOCÊ!"}, //Alt Param
+      "DontGoCookie"); //Cookie name
+    }
+  });
+}
 
 function userDontGo(oParam){
   var OpenDontGoPopup=document.getElementById('ShowDontGoPopup');
@@ -1002,25 +945,34 @@ function fnDontGoActions() {
     return;
   }
 }
-
 document.addEventListener('DOMContentLoaded', fnDontGoActions, false);
 
-function fnProgressBarLoading(){
-  NProgress.start();
-  window.addEventListener("load",function(event){
-    NProgress.done();
-  });
+// Header Off-Canvas menu
+function headerOpenNav(){
+  document.getElementById("headerSidenav").style.left="0px";
+  document.getElementById("offcanvas-overlay").style.display = "block";
+  document.onkeyup=function(e){
+    e=e||window.event;
+    if(e.keyCode==27){
+      document.getElementById("headerSidenav").style.left="-250px";
+      document.getElementById("offcanvas-overlay").style.display = "none";
+    }
+  };
+}
+function headerCloseNav(){
+  document.getElementById("headerSidenav").style.left="-250px";
+  document.getElementById("offcanvas-overlay").style.display = "none";
 }
 
-/* Disable Speech Recognition IOS */
+/* Disable Speech Recognition IOS  */
 function fnSpeechRecognitionIOS(){
   if (window.hasOwnProperty('webkitSpeechRecognition')) {
     document.getElementById("voiceSearch").style.display="block";
+    document.getElementById("search-button").style.width="85px";
   }else{
     document.getElementById("voiceSearch").style.display="none";
     document.getElementById("voiceSearchMGlass").style.display="block";
-    document.getElementById("voiceSearchMGlass").style.position="relative";
-    document.getElementById("voiceSearchMGlass").style.left="15px";
+    document.getElementById("search-button").style.width="55px";
   }
 }
 
@@ -1064,6 +1016,7 @@ function fnNewsVoiceSearch(){
     }
   }
 }
+
 
 // Cálculo de frete na cesta
 function fnCustomizeCart(){
@@ -1310,7 +1263,7 @@ var Cart$=(function(){
       if(sProdutosNaCesta!=""){
         ValCesta=subtotalProdCart.replace(".","").replace(",",".");
         sFinalCart=""; 
-        if(totalWrapValue>0)ValCesta=ValCesta-totalWrapValue; //se tem valor de presente, retira do valor da cesta       
+        if(totalWrapValue>0)ValCesta=ValCesta-totalWrapValue; //se tem valor de presente, retira do valor da cesta      
         //Se valor do total dos produtos é diferente do subtotal calculado exibe descontos
         if(totalProds!=subtotalProdCart){
           var ValProds=totalProds.replace(".","").replace(",",".");
@@ -1322,13 +1275,13 @@ var Cart$=(function(){
           sFinalCart+="<div class=TotItProdCart>Total dos itens:</div>";
           sFinalCart+="<div class=TotItProdCartValor>&nbsp;&nbsp;"+ FormatPrice(ValProds,currencyProdCart) +"</div>";
           sFinalCart+="</div>";
-          //Exibe descontos
+          //Exibe descontos  
           if(ValorDesconto>0){
             sFinalCart+="<div class='CartDesign-descontos-container'>";
             sFinalCart+="<div class=DescProdCart>Descontos ("+ PercDesconto +"%):</div>";
             sFinalCart+="<div class=DescProdCartValor>&nbsp;-&nbsp;"+ FormatPrice(ValorDesconto,currencyProdCart) +"</div>";
             sFinalCart+="</div>";
-          }           
+          }
         }       
         //Exibe embalagem  
         if(totalWrapValue>0){ //Se tem valor de embalagem mostra
@@ -1635,3 +1588,27 @@ var Cart$=(function(){
   }
 
 })();
+
+//Insert URL Preview
+function insertURLPreview(){
+  jQuery(function () {
+    var load = function (url) {
+        jQuery.get(url).done(function (data) {
+        })
+    };
+    jQuery(document).on('click', 'a', function (e) {
+        e.preventDefault();
+  
+        var $this = jQuery(this),
+            url = $this.attr("href"),
+            title = $this.text();
+            
+        history.pushState({url:url,title:title},title,url);
+        document.title = title;
+        load(url);
+    });
+    jQuery(document).on('click', '.vex-close', function (e) {
+      window.history.back(); 
+    });
+  });
+}
