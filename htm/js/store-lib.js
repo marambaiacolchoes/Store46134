@@ -1612,3 +1612,103 @@ function insertURLPreview(){
     });
   });
 }
+
+/*Função para mostrar parcelamento*/
+function fnMaxInstallmentsGrid(PrecoProd,MaxParcelas){
+  var ComSem;
+  if(typeof Juros!="undefined"){
+  if(PrecoProd==0||MaxParcelas==1||Juros.length==0)return "";
+  if(MaxParcelas==0||MaxParcelas>Juros.length)MaxParcelas=Juros.length;
+  if(Juros[MaxParcelas-1]>0)ComSem=""; else ComSem="<font color=#990000> sem juros</font>";
+  return "<span class=EstParc> ou <b>"+MaxParcelas+"x</b>"+ComSem+" de <b>"+FormatPrecoReais(CalculaParcelaJurosCompostos(PrecoProd,MaxParcelas))+"</b></span>";
+  }else{
+  return "";
+  }
+  }
+  /*Função para mostrar valor formatado*/
+  function FormatNumber(num){
+  var num=num.toString().replace(/\$|\,/g,'');
+  if(isNaN(num))num="0";
+  sign=(num==(num=Math.abs(num))); num=Math.floor(num*100+0.50000000001); num=Math.floor(num/100).toString();
+  for(var i=0;i<Math.floor((num.length-(1+i))/3);i++)num=num.substring(0,num.length-(4*i+3))+'.'+num.substring(num.length-(4*i+3));
+  return ((sign)?'':'-')+num;
+  }
+  /*Função para mostrar valor economizado em produtos em promoção*/
+  function fnShowEconomyGrid(ProdPrice,ProdPriceOri){
+  if(ProdPrice!=ProdPriceOri && typeof FormatNumber == 'function' && typeof FormatPrice == 'function' ){
+  return "<font style='font-size:16px;display:block;margin:10px 0;' color=#6f9e45>Economize <b>"+ FormatPrice(ProdPriceOri-ProdPrice,'R$') +"</b> ("+ FormatNumber(((ProdPriceOri-ProdPrice)/ProdPriceOri)*100)+"%)</font>";
+  }else{return "";}
+  }
+
+  // ZipCode Grid FC - CEP - Begin 
+function fnShowCEPGrid(IDProd){
+  if(FC$.TypeFrt==3){
+  var sNumCEP=fnGetCookie('CEP'+FC$.IDLoja);
+  if(sNumCEP==null)sNumCEP="";
+  sCEP="<div id='idDivCEPFC'>";
+  sCEP+=" <div id='idDivTitCEP'><img src='"+ FC$.PathImg +"iconziptruck.svg' width='25' height='25' alt='Zip box' /><span>Simule o valor do frete</span></div>";
+  sCEP+=" <div id='idDivContentCEP'>";
+  sCEP+=" <div id='idDivContentFieldsCEP'>";
+  sCEP+=" <div id='idDivCEPCalc'>";
+  sCEP+=" <div class='FieldCEP FieldCEPQty'><label>Qtd.</label><input type='number' id='idQtdZip"+ IDProd +"' value='1' maxlength='4'></div>";
+  sCEP+=" <div class='FieldCEP FieldCEPNum'><input type='text' placeholder='CEP' id='idZip"+ IDProd +"' value='"+ sNumCEP +"' maxlength='9'></div>";
+  sCEP+=" <img src='"+ FC$.PathImg +"iconnewsletter.svg' height='29px' id='idCEPButton' class='FieldCEPBtn' onclick='fnGetShippingValuesProdGrid("+ IDProd +")'>";
+  sCEP+=" </div>";
+  sCEP+=" </div>";
+  sCEP+=" <div id='idDivImgLoadingCEPFC'><img src='"+ FC$.PathImg +"loadingcep.gif' vspace=3 style='display:none;' id=ImgLoadingCEP></div>";
+  sCEP+=" <div id='idShippingValues"+ IDProd +"'></div></div>";
+  sCEP+=" </div>";
+  sCEP+="</div>";
+  var oShowCEP=document.getElementById("ShowCEP"+IDProd);
+  if(oShowCEP)oShowCEP.innerHTML=sCEP;
+  }
+  }
+  function fnGetShippingValuesProdGrid(IDProd){
+  sCEP=document.getElementById("idZip"+ IDProd).value;
+  fnSetCookie('CEP'+FC$.IDLoja,sCEP);
+  if(sCEP==""){document.getElementById("idShippingValues"+IDProd).innerHTML="<span class='freightResult' style=color:#990000;>Informe o CEP</span>";return;}
+  document.getElementById("idShippingValues"+IDProd).innerHTML="";
+  document.getElementById("ImgLoadingCEP").style.display='';
+  var iQty=document.getElementById("idQtdZip"+IDProd).value;
+  if(IDProd)var sParamProd="&idproduto="+ IDProd;
+  else var sParamProd="";
+  AjaxExecFC("/XMLShippingCEP.asp","&qty="+ iQty +"&cep="+ sCEP + sParamProd,false,processXMLCEPGrid,IDProd);
+  }
+  function processXMLCEPGrid(obj,IDProd){
+  var sShipping="";
+  var oShippingValues=document.getElementById("idShippingValues"+IDProd);
+  var iErr=ReadXMLNode(obj,"err");if(iErr==null)return;
+  if(iErr!="0"){
+  document.getElementById("ImgLoadingCEP").style.display='none';
+  oShippingValues.innerHTML="<span class='freightResult' style=color:#990000;>"+ ReadXMLNode(obj,"msg") +"</span>";
+  return;
+  }
+  oShippingValues.innerHTML="";
+  var UseCart=ReadXMLNode(obj,"UseCart");
+  if(UseCart=="False"){
+  var ProdName=ReadXMLNode(obj,"ProdName");
+  var ProdRef=ReadXMLNode(obj,"ProdRef");
+  }
+  sShipping+="<div class='ZipOptions'>";
+  var iOpt=ReadXMLNode(obj,"OptQt");
+  for(var i=1;i<=iOpt;i++){
+  var OptName=ReadXMLNode(obj,"Opt"+ i +"Name");
+  var OptImage=ReadXMLNode(obj,"Opt"+ i +"Image");
+  var OptObs=ReadXMLNode(obj,"Opt"+ i +"Obs");
+  if(OptObs==null)OptObs="";
+  sValorFrete=ReadXMLNode(obj,"Opt"+ i +"Value");
+  if(sValorFrete=="R$ 0,00")sValorFrete="FRETE GRÁTIS";
+  sShipping+="<div class='ZipOption'>";
+  sShipping+=" <div class='ZipNameObs'>";
+  sShipping+=" <div class='ZipName'>"+ OptName +"</div>";
+  sShipping+=" <div class='ZipObsVal'>"+ OptObs +"</div>";
+  sShipping+=" </div>";
+  sShipping+=" <div class='ZipValue'>"+ sValorFrete +"</div>";
+  sShipping+="</div>";
+  }
+  oShippingValues.innerHTML=sShipping;
+  oShippingValues.style.display="block";
+  sShipping+="</div>";
+  document.getElementById("ImgLoadingCEP").style.display='none';
+  }
+  // ZipCode Grid FC - CEP - End 
