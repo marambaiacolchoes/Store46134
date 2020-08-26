@@ -13,7 +13,6 @@
 </div>
 <script>
 var bShowCupomCheckout=true;
-
 function FuncChkRegisterEnd(){
   if(F$.Step==2){
     window.onscroll=null;
@@ -23,7 +22,12 @@ function FuncChkRegisterEnd(){
   }else if(F$.Step==1){
     if(bShowCupomCheckout)fnShowCupom();  //Chama função que exibe campo para cupom
   }
+}
 
+function FuncChkRegisterBegin(){
+  if(F$.Step==1 && (F$.FreightValue=='' || F$.FreightValue==null)){
+    F$.GetID("idChkPaymentFC").innerHTML="<div id=idChkPaymentIntFC class=EstChkDiv><div id=idTitPaymentFC class=EstTitCheckoutFC>Pagamento</div><p>As op&ccedil;&otilde;es de pagamento ser&atilde;o exibidas ap&oacute;s a etapa da escolha do frete.</p></div>";
+  }
 }
 
 // Cupom Checkout
@@ -49,7 +53,7 @@ function fnCupomApply(){
   var oCupom=document.getElementById("Cupom");
   if(oCupom){
     var sCupom=oCupom.value;
-    if(sCupom!=""){AjaxExecFC(FCLib$.uk("url-contact"),"idloja="+ FC$.IDLoja+"&cupom="+ sCupom,false,fnCallBackCupom);}
+    if(sCupom!=""){AjaxExecFC(FCLib$.uk("url-contact"),"cupom="+ sCupom,false,fnCallBackCupom);}
   }
 }
 
