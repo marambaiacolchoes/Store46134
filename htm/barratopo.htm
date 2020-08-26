@@ -1,205 +1,87 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" media="all">
-<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<!-- Includes CSS -->
-<link rel="stylesheet" href="/wave/v3/wavemin.css?cccfc=1">
-<script>FCLib$.loadAsyncCSS('<PathTo file="htm/css/jquery_ui.css">');</script>
 <!--[if IE]><style type="text/css">.ui-autocomplete-category{margin-top: -2px}</style><![endif]-->
-<!-- Includes Javascript -->
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-<script src='<PathTo file="htm/js/autosuggesttbar.js">'></script>
-<script src='<PathTo file="htm/js/autosuggest.js">'></script>
-<script src='<PathTo file="htm/js/scrolltothetop.js">'></script>
-<script src='<PathTo file="htm/js/tinynav.js">'></script>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <script>
 var iItensCesta=<QtdCesta>;
 var iQtdProds=0;
-ImgLoadingFC=FC$.PathImg+"loading.gif?cccfc=1"; //loading da autopagina√ß√£o
+ImgLoadingFC=FC$.PathImg+"loading.gif?cccfc=1";
 ImgOnError=FC$.PathImg+"nd";
 FCLib$.LazyLoadWaitImage=FC$.PathImg+"loading-lazy-load.gif?cccfc=1"; //loading usado no lazy load
 </script>
 
-<!-- Begin: Toolbar -->
-<div class="FCToolBar">
-  <div class="FCToolBarContainer">
-    <a href="<StoreDomain>"><div class="FCToolBarLogo"><img alt="<NomeLoja>" src="<PathTo file="images/logotopo.png">"></div></a>
-    <a href="<url-categories>" class="HeaderMenuToolbarFC"><span class="HeaderMenuULIconFC HeaderMenuCatDepFC"><img64 src="<BaseLoja>images/iconcat.svg" plain="true" width="18" height="18"></span> <Categorias></a>
-    
-    
-    <form name="TopSearchToolbarForm" id="autocomplete-form-toolbar" class="FCToolBarForm" method="GET" action="<url-prod>">
-    <input type="hidden" name="<par-typed>" value="true">
-    <input type="text" id="autocomplete-toolbar" value="" name="<par-text>" class="InputTextBusca ui-autocomplete-input" placeholder="Digite sua busca aqui" autocomplete="on">
-    <a href="#search" onclick="sF$.fnSearchToolbarSubmit(document.TopSearchToolbarForm);" class="btn1 btn-sent FCToolBarButton"><span class="HeaderSerachIMGIconFC"><img64 src="<BaseLoja>images/iconsearch.svg" plain="true" width="25" height="25" alt="Buscar" title="Buscar"></span></a>
-    </form>
-  
-
-    <!--SerachBar Bootstrap
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h2>Custom search field</h2>
-          <div id="custom-search-input">
-            <div class="input-group col-md-12">
-              <input type="text" class="form-control input-lg" placeholder="Buscar" />
-              <span class="input-group-btn">
-                <button class="btn btn-info btn-lg" type="button">
-                  <i class="glyphicon glyphicon-search"></i>
-                </button>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
-
-
-    <span class="FCToolBarChatTel">
-      <a href="#" style="float:left;" class=""><img64 src="<BaseLoja>images/iconcomphone.svg" plain="true" width="20" height="20"></a>
-      <p><CompanyPhone></p>
-    </span>
-
-    <div class="HeaderCartMainFC ToolBarCart">
-      <a href="<url-add-product>">
-        <div class="HeaderCartMainIconFC">
-          <img64 src="<Baseloja>images/iconshopcart.svg" plain="true" width="35" height="35">
-        </div>
-      </a>
-      <a href="<url-add-product>">
-        <div class="HeaderCartMainItemTotalFC">
-          <div id="HeaderCartItemFC"><span id="idCartItemsToolTop">0</span> item(s)</div>
-          <div id="HeaderCartTotalFC"><span id="idCartTotalToolTop">R$ 0,00</span></div>
-        </div>
-      </a>
-    </div>
-  </div>
+<div id="offcanvas-overlay" onclick="headerCloseNav();"></div>
+<div id="headerSidenav" class="header-sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="headerCloseNav()"><img alt="Fechar" title="Fechar" src="<PathTo file="images/icon-menu-close.svg">" loading="lazy" width="35" height="35"></a>
+  <a href="/" class="header-sidenav-link"><span class="header-sidenav-link-position">Home</span></a>
+  <a href="<url-sale>" class="header-sidenav-link"><span class="header-sidenav-link-position">PromoÁıes</span></a>
+  <a href="<url-release>" class="header-sidenav-link"><span class="header-sidenav-link-position">LanÁamentos</span></a>
+  <a href="<url-account>?orders=1#Orders" class="header-sidenav-link"><span class="header-sidenav-link-position">Meus Pedidos</span></a>
+  <a href="/lista-de-compra" rel="nofollow" class="header-sidenav-link header-sidenav-link-shopping-list"><span class="header-sidenav-link-position header-menu-shopping-list"><img64 src="<BaseLoja>images/product-list.svg" width="22" height="22" plain="true"><span>Lista de Compra</span></span></a>
+  <a href="<url-account>?wishlist=1#Wishlist" rel="nofollow" class="header-sidenav-link"><span class="header-sidenav-link-position header-menu-wishlist"><img64 src="<BaseLoja>images/product-wishlist.svg" width="22" height="22" plain="true"><span>Lista de Desejos</span></span></a>
+  <a href="<url-account>?register=1#Register" class="header-sidenav-link"><span class="header-sidenav-link-position">Cadastro</span></a>
+  <a href="<url-newsletter>" class="header-sidenav-link"><span class="header-sidenav-link-position">Newsletter</span></a>
+  <a href="<url-contact>" class="header-sidenav-link"><span class="header-sidenav-link-position">Contato</span></a>
+  <a href="<url-categories>" class="header-sidenav-link"><span class="header-sidenav-link-position"><categorias></span></a>
+  <ListPathCat out="10" id="-5">
 </div>
-<script>
-  FCLib$.onReady(function(){
-    var w=jQuery(window).width();w>1024&&ToolbarCartExec();
-  }); 
-</script>
-<!-- End: Toolbar -->
 
-<!-- Begin: Logo|Menu|Search|Cart -->
-<div class="MainContainer">
-  <div class="row FullSpaceFC">
-    <div class="col-small-12 col-medium-3 col-large-3 col-xlarge-3 text-medium-left text-large-left text-xlarge-left">
-      <a href="<StoreDomain>"><img alt="<NomeLoja>" title="<NomeLoja>" src="<PathTo file="images/logotopo.png">" class="HeaderLogo"></a>
-    </div>
-    <div class="col-small-12 col-medium-6 col-large-6 col-xlarge-6">
-      <div class="HeaderMenuOneFC hide-small">
-        <ul>
-          <li class="header-menu-display"><a href="<url-account>?register=1#Register">Meu cadastro</a></li>
-          <li><a href="<url-account>?orders=1#Orders">Meus pedidos</a></li>
-          <li class="header-menu-display"><a href="<url-contact>">Contato</a></li>
-          <li class="header-menu-shopping-list"><a href="/lista-de-compra" rel="nofollow"><img64 src="<BaseLoja>images/product-list.svg" width="22" height="22" plain="true">Lista de compra</a></li>
-          <li class="header-menu-wishlist"><a href="<url-account>?wishlist=1#Wishlist" rel="nofollow"><img64 src="<BaseLoja>images/product-wishlist.svg" width="22" height="22" plain="true">Lista de desejos</a></li>
-        </ul>
-      </div>
-      <form name="TopSearchForm" method="GET" id="autocomplete-form" action="<url-prod>">
-        <input type="hidden" name="<par-typed>" value="true">
-	<div class="HeaderSearchFC">
-	  <div id="DivSearch" class="collapse">
-	    <div class="col-small-9 col-medium-9 col-large-9 col-xlarge-9">
-	      <input type="text" id="autocomplete" value="<SearchText>" name="<par-text>" class="InputTextBusca" placeholder="Digite sua busca aqui">
-	    </div>
-	    <div class="col-small-3 col-medium-3 col-large-3 col-xlarge-3 speech">
-              <a href="#search" class="btn1 btn-sent HeaderIconSearchButtonFC">
-                <img class="header-speech-icon" id="voiceSearch" onclick="sF$.fnStartDictation()" src="<BaseLoja>images/icon-speech.svg?cccfc=1" loading="lazy" width="30" height="30" alt="Fale" />
-                <span class="HeaderSerachIMGIconFC" onclick="sF$.fnSearchSubmit(document.TopSearchForm);"><img id="voiceSearchMGlass" src="<BaseLoja>images/iconsearch.svg" loading="lazy" width="25" height="25" alt="Buscar" title="Buscar"></span>
-              </a>
-            </div>
-	  </div>
-	</div>
-      </form>
-      <div class="MainConatiner HeaderSocialLogin-position hide-small">
-        <div class="col-small-12 col-medium-9 col-large-12 col-xlarge-12">
-          <ul class="HeaderContainerSocialLoginUL">
-          <li class="HeaderContainerSocialLoginIconUser"><img id="UserImage" src="<PathTo file="images/iconuser.svg">" loading="lazy" width="20" height="20" alt="Login usuÔøΩrio">&nbsp;</li>
-          <li class="HeaderContainerSocialLoginPosition" id="Header_SocialLogin_NamePosition"><span class="loginInfo"></span></li>
-          <li class="HeaderContainerSocialLoginGlobalSingIcons">&nbsp;<span id="idImgGlobalSignFC"></span></li>
-          </ul>         
-        </div>
-      </div>
-    </div>
-    <!-- Begin Cart -->
-    <div class="col-small-12 col-medium-3 col-large-3 col-xlarge-3 hide-small">
-      <div class="HeaderCartMainFC">
-        <a style="cursor:pointer;" onclick="Cart$.fnShowCartCheckout();">
-          <div class="HeaderCartMainIconFC">
-            <img64 src="<BaseLoja>images/iconshopcart.svg" plain="true" width="35" height="35">
-          </div>
-        </a>
-        <a style="cursor:pointer;" onclick="Cart$.fnShowCartCheckout();">
-          <div class="HeaderCartMainItemTotalFC">
-            <div id="HeaderCartItemFC"><span id="idCartItemsTop"></span> item(s)</div>
-            <div id="HeaderCartTotalFC"><span id="idCartTotalTop"></span></div> 
-          </div>
-        </a>
-      </div>
-    </div>
-    <!-- End Cart -->
-  </div> 
-</div>
-<!-- End: Logo|Menu|Search|Cart -->
-
-<!-- Begin Social Login User -->
-<div class="MainContainer HeaderSocialLoginPosition">
-  <div class="row">
-    <div class="col-medium-3 col-large-3 col-xlarge-3"></div>
-    <div class="col-small-12 col-medium-8 col-large-6 col-xlarge-6">
-    
-    </div>
-    <div class="col-medium-1 col-large-3 col-xlarge-3"></div>
-  </div>
-</div>
-<!-- End Social Login User -->
-
-<!-- Begin Main Menu -->
-<div class="HeaderMainMenuFC">
+<div class="row HeaderMainbar">
   <div class="MainContainer">
-    <div class="row collapse">
-      <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
-        <nav class="SmallMenuContainer">
-          <div class="SmallMenuButtom">
-            <span class="SmallMenuIcon"><img64 src="<BaseLoja>images/iconmmobile.svg" plain="true" width="18" height="18"></span>
-            <span>Menu</span>
-          </div>
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+      <div class="header-mainbar-flex">
+        <div class="header-mainbar-flex-mobile-menu" onclick="headerOpenNav()"><img alt="Menu" title="Menu" src="<PathTo file="images/icon-menu.svg">" loading="lazy" width="35" height="35"></div>
+        <div class="header-mainbar-flex-logo"><a href="<StoreDomain>"><img alt="<NomeLoja>" title="<NomeLoja>" src="<PathTo file="images/logotopo.png">" class="HeaderLogo"></a></div>
+        <div class="child-header-mainbar header-mainbar-flex-menu hide-small hide-medium hide-large show-xlarge">
           <ul class="SmallMenuList HeaderMenuULFC">
-            <a href="<StoreDomain>"><li class="HeaderMenuHomeMobileFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconhome.svg" plain="true" width="18" height="18"></span> Home</li></a>
-            <a href="<url-categories>"><li class="HeaderMenuHomeDepFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconcat.svg" plain="true" width="18" height="18"></span> <Categorias></li></a>
-            <a href="<url-sale>"><li class="HeaderMenuSaleMobileFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconsale.svg" plain="true" width="18" height="18"></span> Promo√ß√µes</li></a>
-            <a href="<url-release>"><li class="HeaderMenuReleaseMobileFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconrelease.svg" plain="true" width="18" height="18"></span> Lan√ßamentos</li></a>
-            <a href="<url-news>"><li class="HeaderMenuNewsMobileFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconnews.svg" plain="true" width="18" height="18"></span> Not√≠cias</li></a>
-            <a href="<url-help>"><li class="HeaderMenuHelpMobileFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconhelp.svg" plain="true" width="18" height="18"></span> Ajuda</li></a>
+            <a href="<url-sale>"><li class="HeaderMenuSaleMobileFC font-bold">PromoÁıes</li></a>
+            <a href="<url-release>"><li class="HeaderMenuReleaseMobileFC font-bold">LanÁamentos</li></a>
           </ul>
-        </nav>
-        <ul class="HeaderMenuULFC smallMenuHide">  
-          <a href="<StoreDomain>"><li class="HeaderMenuHomeMobileFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconhome.svg" plain="true" width="18" height="18"></span> Home</li></a>
-          <a href="<url-categories>"><li class="HeaderMenuHomeDepFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconcat.svg" plain="true" width="18" height="18"></span> <Categorias></li></a>
-          <a href="<url-sale>"><li class="HeaderMenuSaleMobileFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconsale.svg" plain="true" width="18" height="18"></span> Promo√ß√µes</li></a>
-          <a href="<url-release>"><li class="HeaderMenuReleaseMobileFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconrelease.svg" plain="true" width="18" height="18"></span> Lan√ßamentos</li></a>
-          <a href="<url-news>"><li class="HeaderMenuNewsMobileFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconnews.svg" plain="true" width="18" height="18"></span> Not√≠cias</li></a>
-          <a href="<url-help>"><li class="HeaderMenuHelpMobileFC"><span class="HeaderMenuULIconFC"><img64 src="<BaseLoja>images/iconhelp.svg" plain="true" width="18" height="18"></span> Ajuda</li></a>
-        </ul>
+        </div>
+        <div class="child-header-mainbar header-mainbar-flex-search speech" id="search-box">
+          <form name="TopSearchForm" method="GET" id="autocomplete-form" action="<url-prod>">
+            <input type="hidden" name="<par-typed>" value="true">
+            <input type="text" id="autocomplete" value="<SearchText>" name="<par-text>" class="InputTextBusca" placeholder="Digite sua busca aqui">
+            <img class="header-speech-icon" id="voiceSearch" onclick="sF$.fnStartDictation()" src="<BaseLoja>images/icon-speech.svg?cccfc=1" loading="lazy" width="24" height="24" alt="Fale" />
+            <button id="search-button" type="submit" aria-label="Buscar">                     
+              <img src="<BaseLoja>images/iconsearch.svg?cccfc=1" loading="lazy" width="22" height="22" alt="Buscar" id="voiceSearchMGlass">
+            </button>
+          </form>
+        </div>
+        <div class="header-mainbar-flex-cart">
+          <div class="HeaderBasket">
+            <a style="cursor:pointer;" onclick="Cart$.fnShowCartCheckout();">
+              <img64 src="<BaseLoja>images/iconcart.svg" plain="true">
+              <div class="HeaderCartItensPosition hide-small hide-medium show-large show-xlarge"><span id="idCartItemsTop" class="HeaderCartNumberProds"></span></div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<!-- End Main Menu -->
+
+<div class="header-space-top"></div>
+
+<div class="header-login-row hide-small">
+  <div class="row">
+    <div class="MainContainer">
+      <div class="col-small-12 col-medium-7 col-large-7 col-xlarge-7 text-left">
+        <ul class="HeaderContainerSocialLoginUL">
+          <li class="HeaderContainerSocialLoginIconUser"><img id="UserImage" src="<PathTo file="images/iconuser.svg">" loading="lazy" width="20" height="20" alt="Login usu·rio">&nbsp;</li>
+          <li class="HeaderContainerSocialLoginPosition" id="Header_SocialLogin_NamePosition"><span class="loginInfo"></span></li>
+        </ul>
+      </div>
+      <div class="col-small-12 col-medium-5 col-large-5 col-xlarge-5 text-right">
+        <div class="header-free-order"><b>FRETE GR¡TIS</b> acima de R$ 199,99</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Receive Banner Home -->
 <div id="FC-ShowHomeBanners"></div>
 <!-- End Banner Home -->
 
 <div class="FullSpaceFC"></div>
-
-<script>
-  FCLib$.onReady(function(){MobileMenuClick();});
-</script>
 
 <!-- Begin Aside BarraEsquerda.htm - Close Rodape.htm - Don't remove -->
 <div class="MainContainer">
